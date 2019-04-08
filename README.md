@@ -1,2 +1,5 @@
-# staspk.github.io
-One Awesome User Repo
+# Stanislav Kozubenko
+
+## Sources
+* [Normalize CSS](https://necolas.github.io/normalize.css/)
+* [jQuery](https://jquery.com/)
