@@ -1,0 +1,145 @@
+/*
+ ----   Main Page    --------------
+*/
+
+#mainPage * {
+    position: relative;
+    color:white;
+    overflow: visible;
+  }
+  
+#mainPage #ewuLogo {
+    width: 180px;
+    height: 180px;
+    left: -20px;
+    top: -20px;
+    /* filter: hue-rotate(280deg); */
+    animation: my-hue-rotate 5s linear 0s infinite;
+}
+
+#mainPage h1:hover, #mainPage a:hover { 
+    color: #9c64c2f1;
+    text-decoration: none;
+    animation: colorRotate 3s 0s infinite, my-hover 5s linear 0s infinite;
+}
+
+#mainPage h1:hover { 
+    animation: colorRotate 3s linear 0s infinite, my-shake 9s linear 0s infinite;
+}
+
+#mainPage #firstName-mainPage {
+    top: -145px;
+    left: 179px;
+}
+
+#mainPage #lastName-mainPage {
+    top: -157px;
+    left: 146px;
+}
+
+#mainPage #linkRow {
+    width: 500px;
+    left: -60px;
+    top: -120px;
+}
+
+#mainPage #linkRow * {
+    margin: 10px;   
+}
+
+@keyframes my-hover {
+    from, to {
+      transform: scale(1) translate(0px, 0px);
+    }
+  
+    10% {
+      transform: scale(1.08) translate(0px, -2px);
+    }
+  
+    98% {
+      transform: scale(1) translate(0px, -0px);
+    }
+}
+
+@keyframes my-shake {
+    from,
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translate3d(1px, 0, 0);
+    }
+  }
+
+@keyframes my-hue-rotate {
+    from, to {
+        filter: hue-rotate(280deg);
+    }
+    50% {
+        filter: hue-rotate(284deg);
+    }
+    75% {
+        filter: hue-rotate(290deg);
+    }
+}
+
+@keyframes colorRotate {
+    from {
+        color: rgb(255, 255, 255);
+    }
+    16.6% {
+        color: #b45fecdc;
+    }
+    33.3% {
+        color: rgb(189, 73, 224);
+    }
+    50% {
+        color: #a24fdad7;
+    }
+    66.6% {
+        color: #c747e7d7;
+    }
+    83.3% {
+        color: #e292dbe1;
+    }
+    to {
+        color: #eee6f5e1;
+    }
+}
+
+
+@keyframes colorRotate {
+    from {
+        color: rgb(255, 255, 255);
+    }
+    16.6% {
+        color: #d28fffd7;
+    }
+    33.3% {
+        color: rgb(221, 108, 255);
+    }
+    50% {
+        color: #c671ffd7;
+    }
+    66.6% {
+        color: #d768f3d7;
+    }
+    83.3% {
+        color: #ffbefad7;
+    }
+    to {
+        color: #fefdffe0;
+    }
+}

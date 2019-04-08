@@ -1,0 +1,48 @@
+#contactMePage {
+  background-color: transparent;
+  min-width: 350px;
+  width: 40vw;
+  height: 80vh;
+  color: white;
+}
+
+#contactMePage a {
+  color: white;
+}
+
+#contactMePage .modal-content {
+  background-color: #b275da41;
+}
+
+#contactMePage .offset-my-fa {
+  position: relative;
+  left: -5px;
+  top: 2px;
+}
+
+#contactMePage .btn-danger {
+  margin-top: 10px;
+  background-color: #79599487;
+  border:none;
+}
+
+#contact-me-message-area {
+  max-width: 568px;
+  min-height: 100px;
+}
+
+.footerwrapper {
+  width: 100%;
+}
+
+#github {
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+.onclickspin {
+  min-width: 75px;
+  min-height: 30px;
+  transition: 2s;
+  -webkit-transition: 2s;
+}

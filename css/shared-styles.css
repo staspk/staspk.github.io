@@ -1,0 +1,129 @@
+/*
+ ----   FLYING STARS    --------------
+*/
+
+canvas {
+    display: block;
+    width:500px;
+    height:500px;
+    background:#000;
+}
+
+
+/*
+ ----   SHARED CLASSES    --------------
+*/
+
+a {
+    text-decoration: none;
+}
+
+.center {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: visible;
+
+    margin: auto;
+}
+
+.pageCloser {   /* is a span for closing pages 1-4 */
+    color: white;
+}
+
+.pageCloser:hover {
+    color: rgba(252, 0, 55, 0.966);
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.btn-danger {
+    background-color: #b175dad7;
+    border-color: #7b1eb9d7;
+}
+
+
+/*
+ ----   SCROLLBAR    --------------
+*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 7.5px;
+    height: 0px;
+}
+  
+/* track */
+::-webkit-scrollbar-track {
+    background: #f1f1f13d; 
+}
+
+/* handle */
+::-webkit-scrollbar-thumb {
+    background: #1b090f59; 
+}
+
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 165, 102, 0.25); 
+}
+
+
+/*
+ ----   SHARED PAGE CLASSES    --------------
+*/
+
+
+
+
+
+
+
+
+
+
+/*
+ ----   ANIMATIONS    --------------
+*/
+
+.moveDownFadeIn {
+    animation: moveDownFadeIn 1s linear both;
+}
+
+.moveUpFadeOut {
+    animation: moveUpFadeOut 4s linear both;
+}
+
+@keyframes moveDownFadeIn {
+    0% {
+        transform: translateY(-20px) scaleY(1) scaleX(1);
+        -webkit-filter: blur(10px);
+                filter: blur(10px);
+        opacity: .4;
+    }
+    100% {
+        transform: translateY(20px) scaleY(1) scaleX(1);
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes moveUpFadeOut {
+    0% {
+        transform: translateY(0) scaleY(1) scaleX(1);
+        -webkit-filter: blur(0);
+                filter: blur(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scaleY(1) scaleX(1);
+        -webkit-filter: blur(14px);
+                filter: blur(14px);
+        opacity: .4;
+    }
+}

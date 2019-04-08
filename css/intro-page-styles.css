@@ -1,0 +1,39 @@
+  /*
+   ----   Intro Page    --------------
+  */
+  
+  #introPage * {
+    margin: 0px 50px;
+  }
+  
+  #introPage p {
+    position: relative;
+    top: -31px;
+    left: -200px;
+  }
+  
+  /* Should be 3 seconds */
+  @keyframes pulse {    
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+
+    94% {
+      transform: scale3d(1.20, 1.20, 1.20) translate(0px,5px);
+      /* transform: translate(-50px, 0px); */
+    }
+  
+    96% {
+      transform: scale3d(1.40, 1.40, 1.40) translate(0px,5px);
+      /* transform: translate(-50px, 0px); */
+    }
+  
+    to {
+      transform: scale3d(.001, .001, .001) translate(-1px,-150px);
+      /* transform: translate(-200px, 0px); */
+    }
+  }
+  
+  .intro-disappear {
+    animation: pulse linear 2700ms 1;
+  }
