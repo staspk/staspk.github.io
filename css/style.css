@@ -1,0 +1,14 @@
+/*
+* https://cssreference.io/
+* https://css-tricks.com/almanac/
+*/
+
+/* Diagnostic Styling
+    * Change Background Color
+    * Outline Elements:
+*/
+
+
+* {       /* Use this to outline all the elements to help in diagnostic styling  */
+  outline: 1px dotted black;
+}
