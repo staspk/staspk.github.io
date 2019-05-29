@@ -70,48 +70,11 @@
         </nav>
     </div>
 
-    <div id="searchResultsDiv">
-        <div id="ariaMessagingDiv"> </div> 
-        <div id="searchResults"> </div>
-    </div>
-
 
 
 <script>
     $(document).ready(function () {
-
-        setSearchBy("Class");
-
-        $('#searchResults').html(SEARCH_CLASS_TABLE);
-
-        let url = TEMP_API_LINK;
-
-        var table = $('#searchClassTable').DataTable({   bInfo: false, "bPaginate": false, "bLengthChange": false,
-            "ajax": url,
-            "columns": [
-                { "data": "name",
-                  "render": function(data, type, row, meta){
-                    if(type === 'display'){
-                        data = '<a href="' + data + '">' + data + '</a>';
-                    }
-
-                    return data;
-                    }
-                },
-                { "data": "package" },
-            ],
-            "columnDefs": [
-                { "targets": [1], "searchable": false }
-            ]
-        });
-
-        $('#searchInput').on( 'keyup', function () {
-            table.search( this.value ).draw();
-        } );
-    });
-
-    
-
+    });    
 </script>
 
 
