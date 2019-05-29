@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" >
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Web 2 Framework</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="css/style.css">
-  
+    <!-- Title -->
+    <title>Java API</title>
+
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
@@ -20,19 +17,103 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap-4.1.3.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+   <!-- Global Variables -->
+   <script>
+        var SEARCH_TYPE_SES_KEY = 'searchType';
+        var DEFAULT_SEARCH_TYPE = 'Class';
+    </script>
+
+    <!--Scripts -->
+    <script src="js/libraries/jquery-3.4.1.min.js"></script>          <!-- jQuery -->
+    <script src="js/libraries/popper-1.11.js"></script>               <!-- Popper -->
+    <script src="js/libraries/bootstrap-4.1.3.js"></script>           <!-- Bootstrap --> 
+    <script src="js/libraries/jquery.dataTables.min.js"></script>     <!-- DataTables -->
+    <script src="js/libraries/dataTables.bootstrap4.min.js"> </script>
+    <script src="js/tables.js"></script>
+    <script src="js/utils.js"></script>                               <!-- My Utilities -->
+    <script src="js/siteScripts.js"></script>                         <!-- My Site Scripts -->    
+
+    
 </head>
 
-<body>
 
-    <h1>Stanislav Kozubenko</h1>
+<body> 
+    <div id="navBarDiv">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <a class="navbar-brand" href="index.html" aria-label="Home"><h3 id="pageTitle">Java API Search Utility</h3></a>
+            
+            <div class="collapse navbar-collapse show">
+                <ul class="navbar-nav mr-auto" id="navbarSpacer"></ul>
+                <ul>
+                    <div class="dropdown" id="filterDropdown">
+                        <button class="btn btn-secondary dropdown-toggle" id="searchByDropdownMenu"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="max-height: 40px;">
+                            <span id="searchByDropdownMenuText"></span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="searchByDropdownMenu">
+                            <a class="dropdown-item" onclick="setSearchBy('Class')">Class</a>
+                            <a class="dropdown-item" onclick="setSearchBy('Constructor')">Constructor</a>
+                            <a class="dropdown-item" onclick="setSearchBy('Method')">Method</a>
+                        </div>
+                    </div>
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" id="searchInput" type="search" placeholder="Search Term" aria-label="Search">
+                <!-- <button class="btn btn-danger my-2 my-sm-0" id="searchBtn" type="submit" onclick="search(event, getSesVar(SEARCH_TYPE_SES_KEY), $('#searchInput').val())">Search</button> -->
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div id="searchResultsDiv">
+        <div id="ariaMessagingDiv"> </div> 
+        <div id="searchResults"> </div>
+    </div>
+
+
+
+<script>
+    $(document).ready(function () {
+
+        setSearchBy("Class");
+
+        $('#searchResults').html(SEARCH_CLASS_TABLE);
+
+        let url = TEMP_API_LINK;
+
+        var table = $('#searchClassTable').DataTable({   bInfo: false, "bPaginate": false, "bLengthChange": false,
+            "ajax": url,
+            "columns": [
+                { "data": "name",
+                  "render": function(data, type, row, meta){
+                    if(type === 'display'){
+                        data = '<a href="' + data + '">' + data + '</a>';
+                    }
+
+                    return data;
+                    }
+                },
+                { "data": "package" },
+            ],
+            "columnDefs": [
+                { "targets": [1], "searchable": false }
+            ]
+        });
+
+        $('#searchInput').on( 'keyup', function () {
+            table.search( this.value ).draw();
+        } );
+    });
+
     
-    <img src="gfdgfe" alt="">
 
-    <!-- jQuery -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <!-- Plugins -->
-    <!-- My Scripts -->
-    <script  src="js/scripts.js"></script>
+</script>
+
+
 </body>
-
 </html>

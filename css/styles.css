@@ -1,0 +1,53 @@
+/*
+ ----   NAVIGATION BAR    --------------
+*/
+
+#navBarDiv h3 {
+  color: white;
+}
+
+#filterDropdown {
+  margin: 15px 4px 0px 0px;
+}
+
+#searchInput {
+  min-width: 300px;
+  max-width: 300px;
+  margin-right: 5px
+}
+
+@media (max-width: 992px) {
+  #filterDropdown {
+    position: relative;
+    left: -39.5px;
+  }
+}
+
+
+/*
+ ----   SEARCH RESULTS SECTION    --------------
+*/
+
+body {
+  background-color: #f4edf50d;
+}
+
+#searchResultsDiv h3, #searchResultsDiv h4, p {
+  color: #343a40 !important;
+}
+
+#searchResultsDiv {
+  padding: 10px 30px;
+}
+
+.dataTables_filter, .dataTables_info {  /*  Need to hide the built-in search filter */
+  display: none;
+}
+
+/*
+ ----   TABLES STYLING SECTION    --------------
+*/
+.table thead th {
+  border-top: 1px solid #343a406e;
+  border-bottom: 2px solid #343a406e;
+}
