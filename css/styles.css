@@ -1,66 +1,65 @@
-/*
- ----   GENERAL    --------------
-*/
-
-.btn:focus, .btn:active:focus, .btn.active:focus {
-  outline: none !important;
-  outline-style: none !important;
+*, a {
+  background-color: black;
+  color: white;
 }
-
 
 /*
- ----   NAVIGATION BAR    --------------
+ ----   Intro Page    --------------
 */
 
-#navBarDiv .bg-dark {
-  background-color: #1d2227 !important;
+#introPage {
+	width: 400px;
+	height: 400px;
+	
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+  	
+	margin: auto;
 }
 
-#navBarDiv a {
-  color: #fff2f2;
-  font-size: 16px;
-  margin: 0px 3px;
-}
-
-#ewuLogo {
-  width: 100px;
-  height: 100px;
-  filter: saturate(1.1);
+#introPage * {
   position: relative;
-  left: 5px;
-  top: 5px;
 }
 
-#pageTitle {
-  position: relative;
-  top: -5px;
-  left: 25px;
-}
-
-#linkHolders {
-  position: relative;
-  top: -45px;
-  left: 90px;
-}
-
-
-#contactMeForms{
+#introPage #ewuLogo {
+  width: 180px;
+  height: 180px;
+  left: -20px;
+  top: -20px;
+  filter: hue-rotate(280deg);
   
 }
 
+a:hover { 
+  color: #b175dad7;
+  text-decoration: none;
+}
 
-/* @media (max-width: 1000px) {
-  #logoHolder {
-    min-width: 1000px;
-    position: relative;
-    top: 10px;
-  }
-  #searchByDropdown {
-    position: relative;
-    left: -30px;
-    top: 5px;
-  }
-  form {
-    margin-left:5px;
-  }
-} */
+#introPage #firstName {
+  top: -145px;
+  left: 179px;
+}
+
+#introPage #lastName {
+  top: -157px;
+  left: 146px;
+}
+
+#introPage #linkRow {
+  width: 500px;
+  left: -60px;
+  top: -120px;
+}
+
+#introPage #linkRow * {
+  margin: 10px;
+}
+
+
+
+/*
+ ----   Work Experience    --------------
+*/
