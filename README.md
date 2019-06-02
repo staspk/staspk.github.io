@@ -2,6 +2,9 @@
 ## Audio Sources
 * Intro Sound: https://www.youtube.com/watch?v=MT7MEpM2Muw.
 * Main Song: https://www.youtube.com/watch?v=HI7egq3SnIA.
+* Whoosh Sounds: https://www.youtube.com/watch?v=9gvwhl505-o.
+* Button Hover Sound: https://www.youtube.com/watch?v=B27WxEa97L8.
+* Twinkle Sound: https://www.youtube.com/watch?v=OHjp_EESacg.
 
 ## Image Source
 * Eagle: https://www.ewu.edu/.

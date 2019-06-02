@@ -13,6 +13,22 @@ function setSesVar(sesVar, varVal) {
     sessionStorage.setItem(sesVar, varVal);
 }
 
+/*
+ ----   AUDIO UTILS    --------------
+*/
+
+function playSound(sound) {
+    var foundSound = $("#" + sound);
+    foundSound.play();
+}
+
+// function can be used to stop sound and play it again from the beginning on a mouse hover
+function stopSound(soundobj) {
+    var foundSound = $("#" + sound);
+    foundSound.pause();
+    foundSound.currentTime = 0;
+}
+
 
 /*
  ----   STRING UTILS    --------------

@@ -6,6 +6,8 @@ var introOutSound =  new Audio('./../audio/intro-out.mp3');
 var mainAudio = new Audio('./../audio/main-song.mp3');
 var deepWhooshSound = new Audio('./../audio/deep-whoosh.mp3');
 var whooshEchoSound = new Audio('./../audio/whoosh-echo.mp3');
+var buttonHoverSound = new Audio('./../audio/button-hover.mp3');
+var twinkleSound = new Audio('./../audio/twinkle-sound.mp3');
 var introPage  =  $('#introPage');
 var mainPage   =  $('#mainPage');
 
@@ -18,9 +20,18 @@ var link4 = $("#link4");
 
 audioDiv.toggle();
 mainPage.toggle();
-starfield.set_amount(2200);
-introAudio.play();
 
+$(".hover-sound").hover(function () {
+    buttonHoverSound.play();
+}).mouseleave(function ()
+{
+    buttonHoverSound.pause();
+    buttonHoverSound.currentTime = 0;
+});
+
+$(".twinkle-sound").hover(function () {
+    twinkleSound.play();
+});
 
 function enterMainPage() {
     introAudio.play();
@@ -75,7 +86,7 @@ function enterMainPage() {
 
 
 function openPage(openingPage) {    //pageNum 0 = mainPage, 1-4 in order of appearence of UI
-    
+
     
 }
 
