@@ -1,3 +1,22 @@
+.center {
+    /* width: 100px;
+    height: 100px; */
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: visible;
+
+    margin: auto;
+}
+
 .bold {
     font-weight: 600;
+}
+
+.btn-danger {
+    background-color: #b175dad7;
+    border-color: #7b1eb9d7;
 }

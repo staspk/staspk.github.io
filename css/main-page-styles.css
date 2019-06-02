@@ -1,0 +1,68 @@
+/*
+ ----   Main Page    --------------
+*/
+
+#mainPage * {
+    position: relative;
+    color:white;
+  }
+  
+#mainPage #ewuLogo {
+    width: 180px;
+    height: 180px;
+    left: -20px;
+    top: -20px;
+    filter: hue-rotate(280deg);
+}
+
+h1:hover, a:hover { 
+    color: #b175dad7;
+    text-decoration: none;
+    animation: colorRotate 3s linear 0s infinite;
+}
+
+#mainPage #firstName-mainPage {
+    top: -145px;
+    left: 179px;
+}
+
+#mainPage #lastName-mainPage {
+    top: -157px;
+    left: 146px;
+}
+
+#mainPage #linkRow {
+    width: 500px;
+    left: -60px;
+    top: -120px;
+}
+
+#mainPage #linkRow * {
+    margin: 10px;   
+}
+
+
+@keyframes colorRotate {
+    from {
+        color: #f5e8ffd7;
+    }
+    16.6% {
+        color: #b175dad7;
+    }
+    33.3% {
+        color: rgb(117, 52, 137);
+    }
+    50% {
+        color: #a750e0d7;
+    }
+    66.6% {
+        color: #b175dad7;
+    }
+    83.3% {
+        color: #e9cefcd7;
+    }
+    to {
+        color: #fefdffd7;
+    }
+}
+

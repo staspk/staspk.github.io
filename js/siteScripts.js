@@ -1,41 +1,29 @@
-var API_LINK = "https://josephriddle.com/docletify/api/";
-var TEMP_API_LINK = "http://www.mocky.io/v2/5cedcccd3000005a036e97aa";
+var audioDiv = $("#audioControls");
+var introAudio =  new Audio('./../audio/intro-sound.mp3');
+var introPage  =  $('#introPage');
+var mainPage   =  $('#mainPage');
+
+audioDiv.toggle();
+mainPage.toggle();
 
 
+function enterMainPage() {
+    introAudio.play();
 
-function setSearchBy(searchBy) {
-    setSesVar(SEARCH_TYPE_SES_KEY, searchBy);
-    $('#searchByDropdownMenuText').html("Search By <i>" + searchBy + "</i>");
-    // $('#searchInput').attr("value", "");
-} 
+    animateCSS('#introPage', 'pulse', function() {
+        introPage.toggle();
 
-function setSearchInput(searchTerm) {
-    $('#searchInput').attr("value", "");
-}
-
-
-function search(event, searchedBy, searchedTerm) {
-    event.preventDefault();  // prevent page from redirecting
-
-    if(searchedBy == null || !stringsEqual(searchedBy, "Class") && !stringsEqual(searchedBy, "Constructor") && !stringsEqual(searchedBy, "Method")) {
-        alert("Function: 'search(searchedBy, searchedTerm)',\nIllegalArgumentException (searchedBy = '" + searchedBy + "').\n\nContact Brian Kamp.");
-        return;
-    }
-
-    if(searchedTerm == null)
-        searchedTerm = "";
+        mainPage.toggle();
+        $("#ewuLogo").toggle();
+        // $("#firstName-mainPage").toggle();
+        // $("#lastName-mainPage").toggle();
+        // $("#firstName-mainPage").toggle();
+        // $("#lastName-mainPage").toggle();
         
-    $("#ariaMessagingDiv").html("<h4 aria-live='polite'>Searching Java API for " + searchedBy + " " + searchedTerm + "</h4>");       // aria message to tell user that searchedTerm is being searched
+        $("#ewuLogo").show('slide', {direction: 'left'}, 100);
+        
 
-    //Grabbing Data
-    let url = API_LINK + searchedBy;
-            //delete line after Joe fixes his side
-
+    });
     
-    var htmlTable;
-
-    // $("#ariaMessagingDiv").html("<h4 aria-live='polite'>New search results for Class '" + searchedTerm + "'</h4>");
-    // $("#searchResults").html(htmlTable);
-
-
-} 
+    
+}

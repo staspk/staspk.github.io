@@ -21,25 +21,34 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/bootstrap-4.1.3.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/shared-styles.css">
+    <link rel="stylesheet" href="css/intro-page-styles.css">
+    <link rel="stylesheet" href="css/main-page-styles.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
 </head>
 
 <body> 
-    <audio controls>
-        <source src="./audio/intro-sound.mp3" type="audio/mpeg">
-    </audio>
+    <div id="audioControls">
+        <audio controls>
+            <source id="introAudio" src="./audio/intro-sound.mp3" type="audio/mpeg">
+        </audio>
+    </div>
 
+    <div class="center" id="introPage" style="width: 50px; height: 200px">
+        <button type="button" class="btn btn-danger shadow-none" onclick="event.preventDefault(); enterMainPage();">ENTER</button>
+        <p class="bold" style="width: 200px; color: #b175dad7; font-size: 18px;">Audio Recommended</p>   
+    </div>
 
-    <div id="introPage">
+    <div class="center" id="mainPage" style="width: 400px; height: 400px">
         <div class="container-fluid" id="intro">
             <div class="row">
                 <div class="col">
                     <img id="ewuLogo" src="./images/eagle-red.svg">
                 </div>
                 <div class="col">
-                    <a href=""><h1 id="firstName">Stanislav</h1></a> 
-                    <a href=""><h1 id="lastName">Kozubenko</h1></a> 
+                    <a href="" onclick="event.preventDefault();"><h1 id="firstName-mainPage">Stanislav</h1></a> 
+                    <a href="" onclick="event.preventDefault();"><h1 id="lastName-mainPage">Kozubenko</h1></a> 
                 </div>
             </div>
             <div class="row" id="linkRow">
@@ -52,16 +61,13 @@
     </div>
 
     
-
-
-
 <!--Scripts -->
 <script src="js/libraries/jquery-3.4.1.min.js"></script>          <!-- jQuery -->
 <script src="js/libraries/popper-1.11.js"></script>               <!-- Popper -->
 <script src="js/libraries/bootstrap-4.1.3.js"></script>           <!-- Bootstrap --> 
 <script src="js/utils.js"></script>                               <!-- My Utilities -->
 <script src="js/siteScripts.js"></script>                         <!-- My Site Scripts -->
-
+<script src="js/libraries/jquery-ui.js"></script>
 
 </body>
 </html>
