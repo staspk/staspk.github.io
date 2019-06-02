@@ -19,7 +19,7 @@
 h1:hover, a:hover { 
     color: #b175dad7;
     text-decoration: none;
-    animation: colorRotate 3s linear 0s infinite, my-hover 5s linear 0s infinite;
+    animation: colorRotate 3s 0s infinite, my-hover 5s linear 0s infinite;
 }
 
 h1:hover { 
@@ -96,25 +96,25 @@ h1:hover {
 
 @keyframes colorRotate {
     from {
-        color: #f5e8ffd7;
+        color: rgb(255, 255, 255);
     }
     16.6% {
-        color: #b175dad7;
+        color: #d28fffd7;
     }
     33.3% {
-        color: rgb(117, 52, 137);
+        color: rgb(221, 108, 255);
     }
     50% {
-        color: #a750e0d7;
+        color: #c671ffd7;
     }
     66.6% {
-        color: #b175dad7;
+        color: #d768f3d7;
     }
     83.3% {
-        color: #e9cefcd7;
+        color: #ffbefad7;
     }
     to {
-        color: #fefdffd7;
+        color: #fefdffe0;
     }
 }
 
