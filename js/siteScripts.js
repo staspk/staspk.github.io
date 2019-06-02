@@ -1,23 +1,15 @@
-var CUR_PAGE_OPEN = -1;
-
-var audioDiv = $("#audioControls");
-var introAudio =  new Audio('./../audio/intro-sound.mp3');
-var introOutSound =  new Audio('./../audio/intro-out.mp3');
 var mainAudio = new Audio('./../audio/main-song.mp3');
-var deepWhooshSound = new Audio('./../audio/deep-whoosh.mp3');
 var buttonHoverSound = new Audio('./../audio/button-hover.mp3');
 var twinkleSound = new Audio('./../audio/twinkle-sound.mp3');
-var introPage  =  $('#introPage');
-var mainPage   =  $('#mainPage');
+const introPage  =  $('#introPage');
+const mainPage   =  $('#mainPage');
+const ewuLogo = $("#ewuLogo");
+const nameHolder = $("#nameHolder");
+const link1 = $("#link1");
+const link2 = $("#link2");
+const link3 = $("#link3");
+const link4 = $("#link4");
 
-var ewuLogo = $("#ewuLogo");
-var nameHolder = $("#nameHolder");
-var link1 = $("#link1");
-var link2 = $("#link2");
-var link3 = $("#link3");
-var link4 = $("#link4");
-
-audioDiv.toggle();
 mainPage.toggle();
 
 $(".hover-sound").hover(function () {
@@ -35,14 +27,17 @@ $(".twinkle-sound").hover(function () {
 
 
 function enterMainPage() {
-    var rhythmicEchoSound = new Audio('./../audio/whoosh-echo.mp3');
-    var whooshEchoSound1 = new Audio('./../audio/whoosh-echo1.mp3');
-    var whooshEchoSound2 = new Audio('./../audio/whoosh-echo1.mp3');
+    let introAudio =  new Audio('./../audio/intro-sound.mp3');
+    let introOutSound =  new Audio('./../audio/intro-out.mp3');
+    let deepWhooshSound = new Audio('./../audio/deep-whoosh.mp3');
+    let rhythmicEchoSound = new Audio('./../audio/whoosh-echo.mp3');
+    let whooshEchoSound1 = new Audio('./../audio/whoosh-echo1.mp3');
+    let whooshEchoSound2 = new Audio('./../audio/whoosh-echo1.mp3');
     introAudio.play();
     introOutSound.play();
     
     animateCSS('#introPage', 'intro-disappear', function() {
-        starfield.speed = 1400;
+        setStarField(1400);
 
         mainAudio.addEventListener('ended', function() {
             this.currentTime = 0;
@@ -62,23 +57,17 @@ function enterMainPage() {
         nameHolder.fadeToggle('slow');
         deepWhooshSound.play();
         ewuLogo.show('slide', {direction: 'left'}, 110, function() {
-            starfield.speed = 1100;
-            starfield.set_amount(2000);
+            setStarField(1100, 2000);
             link1.show('slide', {direction: 'left'}, 60, function() {
-                starfield.speed = 900;
-                starfield.set_amount(1700);
+                setStarField(900, 1700);
                 rhythmicEchoSound.play();
                 link2.show('slide', {direction: 'left'}, 75, function() {
-                    starfield.speed = 780;
-                    starfield.set_amount(1500);
+                    setStarField(780, 1500);
                     whooshEchoSound1.play();
                     link3.show('slide', {direction: 'left'}, 100, function() {
-                        starfield.speed = 500;
-                        starfield.set_amount(1250);
+                        setStarField(500, 1250);
                         link4.show('slide', {direction: 'left'}, 120, function() {
-                            starfield.speed = 250;
-                            starfield.set_amount(1000);
-                            
+                            setStarField(250, 1000);
                         });
                     });
                 });
@@ -90,14 +79,17 @@ function enterMainPage() {
     CUR_PAGE_OPEN = 1;
 }
 
-function closeMainPage(openPageNum) {
+function closeMainPage(event, linkClicked) {
+    event.preventDefault();
+
+    var links = [ link1, link2, link3, link4 ];
+
 
     var linkFadeOutSound1 = new Audio('./../audio/link-fade-out-sound.mp3');
     var linkFadeOutSound2 = new Audio('./../audio/link-fade-out-sound.mp3');
     var logoSlideOutSound = new Audio('./../audio/logo-slide-out-sound.mp3');
 
-    starfield.speed = 600;
-    starfield.set_amount(1250);
+    setStarField(600, 1250);
 
     link4.css("color", "#fcabcd");
     link4.hide('puff', {opacity: '0'}, 500, function() {
@@ -106,20 +98,17 @@ function closeMainPage(openPageNum) {
     
     linkFadeOutSound1.play();
     link1.hide('explode', {direction: 'left'}, 200, function() {
-        starfield.speed = 800;
-        starfield.set_amount(1500); 
+        setStarField(800, 1500);
         linkFadeOutSound2.play(); 
         logoSlideOutSound.play();
         link2.hide('explode', {direction: 'left'}, 200, function() {
-            starfield.speed = 1000;
-            starfield.set_amount(1700); 
+            setStarField(1000, 1700);
             link3.hide('explode', {direction: 'left'}, 100, function() {
-                starfield.speed = 1200;
-                starfield.set_amount(2000);
+                setStarField(1200, 2000);
                 nameHolder.hide('drop', {direction: 'right'}, 110, function() {
-                    starfield.speed = 1400;
-                    starfield.set_amount(2100);
+                    setStarField(1400, 2100);
                     ewuLogo.hide('drop', {direction: 'left'}, 110, function() {
+                        openPage(linkClicked);
                     });
                 });
             });

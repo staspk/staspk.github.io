@@ -14,19 +14,14 @@ function setSesVar(sesVar, varVal) {
 }
 
 /*
- ----   AUDIO UTILS    --------------
+ ----   STARFIELD UTILS    --------------
 */
 
-function playSound(sound) {
-    var foundSound = $("#" + sound);
-    foundSound.play();
-}
-
-// function can be used to stop sound and play it again from the beginning on a mouse hover
-function stopSound(soundobj) {
-    var foundSound = $("#" + sound);
-    foundSound.pause();
-    foundSound.currentTime = 0;
+function setStarField(speed, starAmount) {
+    if(speed != null)
+        starfield.speed = speed;
+    if(starAmount != null)
+        starfield.set_amount(starAmount);
 }
 
 
