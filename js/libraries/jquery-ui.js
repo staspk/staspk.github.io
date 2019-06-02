@@ -18247,7 +18247,7 @@ var effectsEffectHighlight = $.effects.define( "highlight", "show", function( op
 	element
 		.css( {
 			backgroundImage: "none",
-			backgroundColor: options.color || "#ffff99"
+			color: "#ffff99"
 		} )
 		.animate( animation, {
 			queue: false,

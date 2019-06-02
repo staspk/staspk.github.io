@@ -5,6 +5,7 @@
 #mainPage * {
     position: relative;
     color:white;
+    overflow: visible;
   }
   
 #mainPage #ewuLogo {
@@ -119,3 +120,26 @@ h1:hover {
 }
 
 
+@keyframes colorRotate {
+    from {
+        color: rgb(255, 255, 255);
+    }
+    16.6% {
+        color: #d28fffd7;
+    }
+    33.3% {
+        color: rgb(221, 108, 255);
+    }
+    50% {
+        color: #c671ffd7;
+    }
+    66.6% {
+        color: #d768f3d7;
+    }
+    83.3% {
+        color: #ffbefad7;
+    }
+    to {
+        color: #fefdffe0;
+    }
+}
