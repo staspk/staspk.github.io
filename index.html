@@ -29,11 +29,7 @@
 </head>
 
 <body> 
-    <div id="audioControls">
-        <audio controls>
-            <source id="introAudio" src="./audio/intro-sound.mp3" type="audio/mpeg">
-        </audio>
-    </div>
+    <canvas id="main_canvas"></canvas>  <!-- For Starfield -->
 
     <div class="center" id="introPage" style="width: 50px; height: 200px">
         <button type="button" class="btn btn-danger shadow-none" onclick="event.preventDefault(); enterMainPage();">ENTER</button>
@@ -46,16 +42,16 @@
                 <div class="col">
                     <img id="ewuLogo" src="./images/eagle-red.svg">
                 </div>
-                <div class="col">
-                    <a href="" onclick="event.preventDefault();"><h1 id="firstName-mainPage">Stanislav</h1></a> 
-                    <a href="" onclick="event.preventDefault();"><h1 id="lastName-mainPage">Kozubenko</h1></a> 
+                <div id="nameHolder" class="col">
+                    <a id="firstName-mainPage" href="" onclick="event.preventDefault();"><h1 >Stanislav</h1></a> 
+                    <a id="lastName-mainPage" href="" onclick="event.preventDefault();"><h1>Kozubenko</h1></a> 
                 </div>
             </div>
             <div class="row" id="linkRow">
-                <a class="bold" href="" onclick="openPage(1)"> Work Experience</a>
-                <a class="bold" href="" onclick="openPage(2)"> Education</a>
-                <a class="bold" href="" onclick="openPage(3)"> Project Highlights</a>
-                <a class="bold" href="" onclick="openPage(4)"> Contact Me</a>
+                <a class="bold" id="link1" href="" onclick="event.preventDefault(); openPage(1)"> Work Experience</a>
+                <a class="bold" id="link2" href="" onclick="event.preventDefault(); openPage(2)"> Education</a>
+                <a class="bold" id="link3" href="" onclick="event.preventDefault(); openPage(3)"> Project Highlights</a>
+                <a class="bold" id="link4" href="" onclick="event.preventDefault(); openPage(4)"> Contact Me</a>
             </div>
         </div>
     </div>
@@ -65,9 +61,12 @@
 <script src="js/libraries/jquery-3.4.1.min.js"></script>          <!-- jQuery -->
 <script src="js/libraries/popper-1.11.js"></script>               <!-- Popper -->
 <script src="js/libraries/bootstrap-4.1.3.js"></script>           <!-- Bootstrap --> 
+<script src="js/libraries/dat.gui.min.js"></script>
+<script src="js/my-star-scripts.js"></script>
 <script src="js/utils.js"></script>                               <!-- My Utilities -->
 <script src="js/siteScripts.js"></script>                         <!-- My Site Scripts -->
 <script src="js/libraries/jquery-ui.js"></script>
+
 
 </body>
 </html>

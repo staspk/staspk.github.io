@@ -20,3 +20,11 @@
     background-color: #b175dad7;
     border-color: #7b1eb9d7;
 }
+
+/* For the flying stars */
+canvas {
+    display: block;
+    width:500px;
+    height:500px;
+    background:#000;
+}
