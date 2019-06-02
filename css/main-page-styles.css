@@ -13,31 +13,7 @@
     left: -20px;
     top: -20px;
     filter: hue-rotate(280deg);
-    animation: my-hue-rotate 3s linear 0s infinite;
-}
-
-@keyframes my-hue-rotate {
-    from {
-        color: #f5e8ffd7;
-    }
-    16.6% {
-        color: #b175dad7;
-    }
-    33.3% {
-        color: rgb(117, 52, 137);
-    }
-    50% {
-        color: #a750e0d7;
-    }
-    66.6% {
-        color: #b175dad7;
-    }
-    83.3% {
-        color: #e9cefcd7;
-    }
-    to {
-        color: #fefdffd7;
-    }
+    animation: my-hue-rotate 5s linear 0s infinite;
 }
 
 h1:hover, a:hover { 
@@ -66,6 +42,17 @@ h1:hover, a:hover {
     margin: 10px;   
 }
 
+@keyframes my-hue-rotate {
+    from {
+        filter: hue-rotate(280deg);
+    }
+    50% {
+        filter: hue-rotate(295deg);
+    }
+    to {
+        filter: hue-rotate(280deg);
+    }
+}
 
 @keyframes colorRotate {
     from {

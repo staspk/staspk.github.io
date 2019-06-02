@@ -173,7 +173,7 @@ function jsStarfield()
 	
 	this.draw_rects = function()
 	{
-		this.ctx.fillStyle = 'rgb(255,255,255)';
+		this.ctx.fillStyle = 'rgb(242, 188, 244)';						//WHERE I CAN CHANGE COLOR
 		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 		
 		for (var i=0; i<this.stars.length; i++)
