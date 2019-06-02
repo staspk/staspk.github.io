@@ -19,7 +19,11 @@
 h1:hover, a:hover { 
     color: #b175dad7;
     text-decoration: none;
-    animation: colorRotate 3s linear 0s infinite;
+    animation: colorRotate 3s linear 0s infinite, my-hover 5s linear 0s infinite;
+}
+
+h1:hover { 
+    animation: colorRotate 3s linear 0s infinite, my-shake 9s linear 0s infinite;
 }
 
 #mainPage #firstName-mainPage {
@@ -41,6 +45,42 @@ h1:hover, a:hover {
 #mainPage #linkRow * {
     margin: 10px;   
 }
+
+@keyframes my-hover {
+    from, to {
+      transform: scale(1) translate(0px, 0px);
+    }
+  
+    10% {
+      transform: scale(1.08) translate(0px, -2px);
+    }
+  
+    98% {
+      transform: scale(1) translate(0px, -0px);
+    }
+}
+
+@keyframes my-shake {
+    from,
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translate3d(1px, 0, 0);
+    }
+  }
 
 @keyframes my-hue-rotate {
     from {

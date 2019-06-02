@@ -6,7 +6,7 @@ var mainPage   =  $('#mainPage');
 
 audioDiv.toggle();
 mainPage.toggle();
-starfield.set_amount(10000);
+starfield.set_amount(2400);
 introAudio.play();
 
 
@@ -14,7 +14,8 @@ function enterMainPage() {
     introAudio.play();
     
     animateCSS('#introPage', 'pulse', function() {
-        starfield.set_amount(1000);
+        starfield.speed = 1200;
+
 
         mainAudio.addEventListener('ended', function() {
             this.currentTime = 0;
@@ -34,16 +35,27 @@ function enterMainPage() {
         // $("#firstName-mainPage").toggle();
         // $("#lastName-mainPage").toggle();
         
-        $("#ewuLogo").show('slide', {direction: 'left'}, 100);
-        $("#link1").show('slide', {direction: 'left'}, 75, function() {
-            $("#link2").show('slide', {direction: 'left'}, 75, function() {
-                $("#link3").show('slide', {direction: 'left'}, 75, function() {
-                    $("#link4").show('slide', {direction: 'left'}, 75, function() {
-
+        $("#ewuLogo").show('slide', {direction: 'left'}, 100, function() {
+            starfield.speed = 800;
+            starfield.set_amount(2000);
+            $("#link1").show('slide', {direction: 'left'}, 75, function() {
+                starfield.speed = 600;
+                starfield.set_amount(1700);
+                $("#link2").show('slide', {direction: 'left'}, 75, function() {
+                    starfield.speed = 400;
+                    starfield.set_amount(1500);
+                    $("#link3").show('slide', {direction: 'left'}, 75, function() {
+                        starfield.speed = 300;
+                        starfield.set_amount(1250);
+                        $("#link4").show('slide', {direction: 'left'}, 75, function() {
+                            starfield.speed = 200;
+                            starfield.set_amount(1000);
+                        });
                     });
                 });
             });
         });
+        
 
     });
     
