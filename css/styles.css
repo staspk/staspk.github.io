@@ -1,53 +1,66 @@
 /*
+ ----   GENERAL    --------------
+*/
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: none !important;
+  outline-style: none !important;
+}
+
+
+/*
  ----   NAVIGATION BAR    --------------
 */
 
-#navBarDiv h3 {
-  color: white;
+#navBarDiv .bg-dark {
+  background-color: #1d2227 !important;
 }
 
-#filterDropdown {
-  margin: 15px 4px 0px 0px;
+#navBarDiv a {
+  color: #fff2f2;
+  font-size: 16px;
+  margin: 0px 3px;
 }
 
-#searchInput {
-  min-width: 300px;
-  max-width: 300px;
-  margin-right: 5px
+#ewuLogo {
+  width: 100px;
+  height: 100px;
+  filter: saturate(1.1);
+  position: relative;
+  left: 5px;
+  top: 5px;
 }
 
-@media (max-width: 992px) {
-  #filterDropdown {
+#pageTitle {
+  position: relative;
+  top: -5px;
+  left: 25px;
+}
+
+#linkHolders {
+  position: relative;
+  top: -45px;
+  left: 90px;
+}
+
+
+#contactMeForms{
+  
+}
+
+
+/* @media (max-width: 1000px) {
+  #logoHolder {
+    min-width: 1000px;
     position: relative;
-    left: -39.5px;
+    top: 10px;
   }
-}
-
-
-/*
- ----   SEARCH RESULTS SECTION    --------------
-*/
-
-body {
-  background-color: #f4edf50d;
-}
-
-#searchResultsDiv h3, #searchResultsDiv h4, p {
-  color: #343a40 !important;
-}
-
-#searchResultsDiv {
-  padding: 10px 30px;
-}
-
-.dataTables_filter, .dataTables_info {  /*  Need to hide the built-in search filter */
-  display: none;
-}
-
-/*
- ----   TABLES STYLING SECTION    --------------
-*/
-.table thead th {
-  border-top: 1px solid #343a406e;
-  border-bottom: 2px solid #343a406e;
-}
+  #searchByDropdown {
+    position: relative;
+    left: -30px;
+    top: 5px;
+  }
+  form {
+    margin-left:5px;
+  }
+} */

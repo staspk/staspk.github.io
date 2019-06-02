@@ -2,3 +2,4 @@
 
 ## Sources
 * Bootstrap / Jquery
+* Eastern Washington University Logo

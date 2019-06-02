@@ -9,12 +9,14 @@
     <title>Stanislav Kozubenko</title>
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Stylesheets -->
@@ -25,31 +27,35 @@
 
 
 <body> 
+    <div id="introPage">
+        
+    </div>
     <div id="navBarDiv">
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-            <a class="navbar-brand" href="index.html" aria-label="Home"><h3 id="pageTitle">Java API Search Utility</h3></a>
-            
-            <div class="collapse navbar-collapse show">
-                <ul class="navbar-nav mr-auto" id="navbarSpacer"></ul>
-                <ul>
-                    <div class="dropdown" id="filterDropdown">
-                        <button class="btn btn-secondary dropdown-toggle" id="searchByDropdownMenu"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="max-height: 40px;">
-                            <span id="searchByDropdownMenuText"></span>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="searchByDropdownMenu">
-                            <a class="dropdown-item" onclick="setSearchBy('Class')">Class</a>
-                            <a class="dropdown-item" onclick="setSearchBy('Constructor')">Constructor</a>
-                            <a class="dropdown-item" onclick="setSearchBy('Method')">Method</a>
-                        </div>
+        <nav class="navbar navbar-expand-sm bg-dark">
+            <div id="leftNavBar">
+                <div id="logoHolder">
+                        <img id="ewuLogo" src="./images/eagle-red.svg" alt="EWU Logo">
+                        <a class="navbar-brand" href="index.html" aria-label="Home"><h1 id="pageTitle">Stanislav Kozubenko</h1></a>
                     </div>
-                </ul>
-
-                <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" id="searchInput" type="search" placeholder="Search Term" aria-label="Search">
-                <!-- <button class="btn btn-danger my-2 my-sm-0" id="searchBtn" type="submit" onclick="search(event, getSesVar(SEARCH_TYPE_SES_KEY), $('#searchInput').val())">Search</button> -->
-                </form>
+                <div class="navbar-nav" id="linkHolders">
+                    <a class="nav-item nav-link active" href="#">Work Experience</a>
+                    <a class="nav-item nav-link" href="#">Education</a>
+                    <a class="nav-item nav-link" href="#">Project Highlights</a>
+                    <a class="nav-item nav-link" href="#">Contact Me</a>
+                </div>
             </div>
-        </nav>
+
+            <div class="navbar-collapse" id="navbarNavAltMarkup">   <!-- Keeps space in the NavBar -->   </div>
+
+            <!-- <div id="contactMeForms">
+                    <input type="email" class="form-control form-control-sm" id="nav-enterYourName" placeholder="Enter Your Name" style="max-width: 200px;">
+                    <input type="password" class="form-control form-control-sm" id="nav-enterYourEmail" placeholder="Enter Your Email" style="max-width: 200px;">
+                    <button class="btn btn-danger btn-sm shadow-none" id="contactMeBtn" type="submit" onclick="contactMeClicked(event);">Contact Me</button>
+            </div> -->
+            
+            
+            
+          </nav>
     </div>
 
     <div id="AboutSection"> </div>
