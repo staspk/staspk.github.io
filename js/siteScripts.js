@@ -142,12 +142,12 @@ function reopenMainPage() {
         new Audio('./../audio/deep-whoosh.mp3').play();
         nameHolder.show('drop', {direction: 'right'}, 110, function() {
             setStarField(1300, 2000);
-            new Audio('./../audio/inverted-whoosh-popin.mp3').play();
+            // new Audio('./../audio/inverted-whoosh-popin.mp3').play();
             link4.show('explode', {direction: 'left'}, 100, function() {
                 setStarField(1200, 1700);
                 link3.show('explode', {direction: 'left'}, 100, function() {
                     setStarField(900, 1500);
-                    new Audio('./../audio/inverted-whoosh-popin.mp3').play();
+                    // new Audio('./../audio/inverted-whoosh-popin.mp3').play();
                     link2.show('explode', {direction: 'left'}, 100, function() {
                         setStarField(600, 1250);
                         link1.show('explode', {direction: 'left'}, 100, function() { 
@@ -186,14 +186,16 @@ function openPage(pageNum) {    //pageNum 0 = mainPage, 1-4 in order of appearen
 
 function closeContactMePage() {
     setStarField(500, 1200);
-
+    
+    contactMePage.addClass("moveUpWithBlurFade");
     setTimeout(function () {
         setStarField(750, 1400);
         setTimeout(function () {
             setStarField(800, 1600);
-            new Audio('./../audio/inverted-spacey-canvas-unfurl.mp3').play();
-            contactMePage.hide('fold', 1000, function() {
+            new Audio("./../audio/inverted-spacey-canvas-unfurl.mp3").play();
+            contactMePage.hide("fold", 1000, function() {
                 setStarField(1400, 2100);
+                contactMePage.removeClass("moveUpWithBlurFade");
                 reopenMainPage();
             });
         }, 100);

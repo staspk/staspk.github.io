@@ -40,3 +40,23 @@ a {
     background-color: #b175dad7;
     border-color: #7b1eb9d7;
 }
+
+
+.moveUpWithBlurFade {
+    animation: blurFade 4s linear both;
+}
+
+
+@keyframes blurFade {
+0% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+    filter: blur(0);
+    opacity: 1;
+}
+100% {
+    transform: translateY(-100px) scaleY(1) scaleX(1);
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+    opacity: .4;
+}
+}
