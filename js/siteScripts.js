@@ -103,7 +103,7 @@ function closeMainPage(event, linkClicked) {
     let clickedLink = $("#link" + linkClicked);
     clickedLink.css("color", "#fcabcd");
     clickedLink.hide('puff', 500, function() {
-        clickedLink.css("color", "#fcabcd");
+        clickedLink.css("color", "white");
     });
 
     linkFadeOutSound1.play();
@@ -129,11 +129,38 @@ function closeMainPage(event, linkClicked) {
 }
 
 function reopenMainPage() {
+    const ewuLogo = $("#ewuLogo");
+    const nameHolder = $("#nameHolder");
+    const link1 = $("#link1");
+    const link2 = $("#link2");
+    const link3 = $("#link3");
+    const link4 = $("#link4");
+
     setStarField(1500, 2200);
     mainPage.toggle();
-    ewuLogo.hide('drop', {direction: 'left'}, 110, function() {
+    ewuLogo.show('drop', {direction: 'left'}, 110, function() {
+        new Audio('./../audio/deep-whoosh.mp3').play();
+        nameHolder.show('drop', {direction: 'right'}, 110, function() {
+            setStarField(1300, 2000);
+            new Audio('./../audio/inverted-whoosh-popin.mp3').play();
+            link4.show('explode', {direction: 'left'}, 100, function() {
+                setStarField(1200, 1700);
+                link3.show('explode', {direction: 'left'}, 100, function() {
+                    setStarField(900, 1500);
+                    new Audio('./../audio/inverted-whoosh-popin.mp3').play();
+                    link2.show('explode', {direction: 'left'}, 100, function() {
+                        setStarField(600, 1250);
+                        link1.show('explode', {direction: 'left'}, 100, function() { 
+                            setStarField(250, 1000);
+                        });
 
+                    });
+                });
+            });
+        });
     });
+
+    
 }
 
 
