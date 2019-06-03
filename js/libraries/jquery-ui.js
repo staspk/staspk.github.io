@@ -18215,23 +18215,6 @@ var effectsEffectFold = $.effects.define( "fold", "hide", function( options, don
 } );
 
 
-/*!
- * jQuery UI Effects Highlight 1.12.1
- * http://jqueryui.com
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license.
- * http://jquery.org/license
- */
-
-//>>label: Highlight Effect
-//>>group: Effects
-//>>description: Highlights the background of an element in a defined color for a custom duration.
-//>>docs: http://api.jqueryui.com/highlight-effect/
-//>>demos: http://jqueryui.com/effect/
-
-
-
 var effectsEffectHighlight = $.effects.define( "highlight", "show", function( options, done ) {
 	var element = $( this ),
 		animation = {

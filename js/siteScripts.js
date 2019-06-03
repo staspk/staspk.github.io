@@ -3,14 +3,14 @@ var buttonHoverSound = new Audio('./../audio/button-hover.mp3');
 var twinkleSound = new Audio('./../audio/twinkle-sound.mp3');
 const introPage  =  $('#introPage');
 const mainPage   =  $('#mainPage');
-const ewuLogo = $("#ewuLogo");
-const nameHolder = $("#nameHolder");
-const link1 = $("#link1");
-const link2 = $("#link2");
-const link3 = $("#link3");
-const link4 = $("#link4");
+const contactMePage = $('#contactMePage');
 
+
+
+// introPage.toggle(); 
 mainPage.toggle();
+contactMePage.toggle(); 
+
 
 $(".hover-sound").hover(function () {
     buttonHoverSound.play();
@@ -27,6 +27,12 @@ $(".twinkle-sound").hover(function () {
 
 
 function enterMainPage() {
+    const ewuLogo = $("#ewuLogo");
+    const nameHolder = $("#nameHolder");
+    const link1 = $("#link1");
+    const link2 = $("#link2");
+    const link3 = $("#link3");
+    const link4 = $("#link4");
     let introAudio =  new Audio('./../audio/intro-sound.mp3');
     let introOutSound =  new Audio('./../audio/intro-out.mp3');
     let deepWhooshSound = new Audio('./../audio/deep-whoosh.mp3');
@@ -82,32 +88,38 @@ function enterMainPage() {
 function closeMainPage(event, linkClicked) {
     event.preventDefault();
 
-    var links = [ link1, link2, link3, link4 ];
+    const ewuLogo = $("#ewuLogo");
+    const nameHolder = $("#nameHolder");
+    const linkFadeOutSound1 = new Audio('./../audio/link-fade-out-sound.mp3');
+    const linkFadeOutSound2 = new Audio('./../audio/link-fade-out-sound.mp3');
+    const logoSlideOutSound = new Audio('./../audio/logo-slide-out-sound.mp3');
 
-
-    var linkFadeOutSound1 = new Audio('./../audio/link-fade-out-sound.mp3');
-    var linkFadeOutSound2 = new Audio('./../audio/link-fade-out-sound.mp3');
-    var logoSlideOutSound = new Audio('./../audio/logo-slide-out-sound.mp3');
+    let links = [ 1, 2, 3, 4 ];
+    let clickedIndex = links.indexOf(linkClicked);
+    links.splice(clickedIndex, 1);
 
     setStarField(600, 1250);
 
-    link4.css("color", "#fcabcd");
-    link4.hide('puff', {opacity: '0'}, 500, function() {
-        link4.css("color", "#fcabcd");
+    let clickedLink = $("#link" + linkClicked);
+    clickedLink.css("color", "#fcabcd");
+    clickedLink.hide('puff', 500, function() {
+        clickedLink.css("color", "#fcabcd");
     });
-    
+
     linkFadeOutSound1.play();
-    link1.hide('explode', {direction: 'left'}, 200, function() {
+    $("#link" + links[0]).hide('explode', {direction: 'left'}, 200, function() {
         setStarField(800, 1500);
         linkFadeOutSound2.play(); 
         logoSlideOutSound.play();
-        link2.hide('explode', {direction: 'left'}, 200, function() {
+        $("#link" + links[1]).hide('explode', {direction: 'left'}, 200, function() {
             setStarField(1000, 1700);
-            link3.hide('explode', {direction: 'left'}, 100, function() {
+            $("#link" + links[2]).hide('explode', {direction: 'left'}, 100, function() {
                 setStarField(1200, 2000);
                 nameHolder.hide('drop', {direction: 'right'}, 110, function() {
-                    setStarField(1400, 2100);
+                    setStarField(1000, 1800);
                     ewuLogo.hide('drop', {direction: 'left'}, 110, function() {
+                        setStarField(800, 1600);
+                        mainPage.toggle();
                         openPage(linkClicked);
                     });
                 });
@@ -116,11 +128,47 @@ function closeMainPage(event, linkClicked) {
     });
 }
 
+function reopenMainPage() {
+    setStarField(1500, 2200);
+    mainPage.toggle();
+    ewuLogo.hide('drop', {direction: 'left'}, 110, function() {
 
-function openPage(openingPage) {    //pageNum 0 = mainPage, 1-4 in order of appearence of UI
+    });
+}
 
-    if(openingPage == 4) {     //need to open Contact Page
-        closeMainPage();
+
+function openPage(pageNum) {    //pageNum 0 = mainPage, 1-4 in order of appearence of UI
+    if(pageNum == 4) {     //need to open Contact Page
+        setStarField(1400, 2100);
+        new Audio('./../audio/spacey-canvas-unfurl.mp3').play();
+        contactMePage.show('fold', 1000, function() {
+            setStarField(750, 1400);
+            new Audio('./../audio/gmail-new-mail-sound.mp3').play();
+            setTimeout(function () {
+                setStarField(500, 1200);
+                
+                setTimeout(function () {
+                    setStarField(250, 1000);
+                }, 100);
+            }, 100);
+        });
     }
 }
 
+
+
+function closeContactMePage() {
+    setStarField(500, 1200);
+
+    setTimeout(function () {
+        setStarField(750, 1400);
+        setTimeout(function () {
+            setStarField(800, 1600);
+            new Audio('./../audio/inverted-spacey-canvas-unfurl.mp3').play();
+            contactMePage.hide('fold', 1000, function() {
+                setStarField(1400, 2100);
+                reopenMainPage();
+            });
+        }, 100);
+    }, 100);
+}

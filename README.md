@@ -11,5 +11,8 @@
 
 ## Libraries/Code Used
 * Bootstrap / Jquery
+* FormSpree
+* FontAwesome Icons
+* Contact Me page based on: https://codepen.io/EuanRiggans/pen/gPxxod.
 * ColorRotate Effect: http://jsfiddle.net/P6WVg/7/.
 * Javascript Stars: https://codepen.io/john052/pen/KzIfb.

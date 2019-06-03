@@ -1,3 +1,15 @@
+/* For the flying stars */
+canvas {
+    display: block;
+    width:500px;
+    height:500px;
+    background:#000;
+}
+
+a {
+    text-decoration: none;
+}
+
 .center {
     /* width: 100px;
     height: 100px; */
@@ -12,6 +24,14 @@
     margin: auto;
 }
 
+.pageCloser {   /* is a span for closing pages 1-4 */
+    color: white;
+}
+
+.pageCloser:hover {
+    color: rgba(252, 0, 55, 0.788);
+}
+
 .bold {
     font-weight: 600;
 }
@@ -19,12 +39,4 @@
 .btn-danger {
     background-color: #b175dad7;
     border-color: #7b1eb9d7;
-}
-
-/* For the flying stars */
-canvas {
-    display: block;
-    width:500px;
-    height:500px;
-    background:#000;
 }

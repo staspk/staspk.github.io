@@ -13,6 +13,7 @@ function setSesVar(sesVar, varVal) {
     sessionStorage.setItem(sesVar, varVal);
 }
 
+
 /*
  ----   STARFIELD UTILS    --------------
 */
@@ -39,7 +40,7 @@ function stringContains(stringToSearch, searchedString) {      //return boolean
 
 
 /*
- ----   STRING UTILS    --------------
+ ----   ANIMATION UTILS    --------------
 */
 
 function animateCSS(element, animationName, callback) {
