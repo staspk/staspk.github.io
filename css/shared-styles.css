@@ -55,8 +55,8 @@ a {
 }
 100% {
     transform: translateY(-100px) scaleY(1) scaleX(1);
-    -webkit-filter: blur(20px);
-            filter: blur(20px);
+    -webkit-filter: blur(14px);
+            filter: blur(14px);
     opacity: .4;
 }
 }

@@ -1,9 +1,8 @@
 #contactMePage {
-  background-color: #161616;
-  width: 40vw;
-  height: 80vh;
   background-color: transparent;
   min-width: 350px;
+  width: 40vw;
+  height: 80vh;
 }
 
 #contactMePage .modal-content {
