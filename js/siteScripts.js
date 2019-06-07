@@ -8,9 +8,9 @@ const workExperiencePage = $('#workExperiencePage');
 
 
 
-// introPage.toggle(); 
+introPage.toggle(); 
 mainPage.toggle();
-workExperiencePage.toggle();
+// workExperiencePage.toggle();
 contactMePage.toggle(); 
 
 
@@ -171,6 +171,16 @@ function reopenMainPage() {
 
 function openPage(pageNum) {    //pageNum 0 = mainPage, 1-4 in order of appearence of UI
 
+    var pageToShow;
+    switch(pageNum) {
+        case 1: pageToShow = workExperiencePage; break;
+        case 2: pageToShow = contactMePage; break;
+        case 3: pageToShow = contactMePage; break;
+        case 4: pageToShow = contactMePage; break;
+        default: alert("openPage(pageNum). illegal arg: " + pageNum);
+    }
+
+
     if(pageNum == 1) {
         setStarField(1400, 2100);
         new Audio('./../audio/spacey-canvas-unfurl.mp3').play();
@@ -190,14 +200,16 @@ function openPage(pageNum) {    //pageNum 0 = mainPage, 1-4 in order of appearen
     if(pageNum == 4) {     //need to open Contact Page
         setStarField(1400, 2100);
         new Audio('./../audio/spacey-canvas-unfurl.mp3').play();
+        contactMePage.addClass("moveDownFadeIn");
         contactMePage.show('fold', 1000, function() {
+            contactMePage.removeClass("moveDownFadeIn");
             setStarField(750, 1400);
             new Audio('./../audio/gmail-new-mail-sound.mp3').play();
             setTimeout(function () {
                 setStarField(500, 1200);
-                
                 setTimeout(function () {
                     setStarField(250, 1000);
+                    
                 }, 100);
             }, 100);
         });
@@ -207,20 +219,15 @@ function openPage(pageNum) {    //pageNum 0 = mainPage, 1-4 in order of appearen
 
 
 function closeContactMePage() {
-    // setStarField(500, 1200);
     setStarField(600, 1500);
-    
-    contactMePage.addClass("moveUpWithBlurFade");
+    contactMePage.addClass("moveUpFadeOut");    
     setTimeout(function () {    
-        setStarField(1000, 1800);
-        setTimeout(function () {
-            setStarField(1400, 2100);
+        setStarField(1200, 1700);
             new Audio("./../audio/inverted-spacey-canvas-unfurl.mp3").play();
             contactMePage.hide("fold", 1000, function() {
-                
-                contactMePage.removeClass("moveUpWithBlurFade");
+                setStarField(1400, 2000);
+                contactMePage.removeClass("moveUpFadeOut");
                 reopenMainPage();
             });
-        }, 100);
     }, 100);
 }
