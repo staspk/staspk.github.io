@@ -8,9 +8,9 @@ const workExperiencePage = $('#workExperiencePage');
 
 
 
-introPage.toggle(); 
+// introPage.toggle(); 
 mainPage.toggle();
-// workExperiencePage.toggle();
+workExperiencePage.toggle();
 contactMePage.toggle(); 
 
 
@@ -216,6 +216,9 @@ function openPage(pageNum) {    //pageNum 0 = mainPage, 1-4 in order of appearen
     }
 }
 
+function closePage(pageNum) {
+    
+}
 
 
 function closeContactMePage() {

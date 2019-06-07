@@ -36,11 +36,15 @@
 <body> 
     <canvas id="main_canvas"></canvas>  <!-- For Starfield -->
 
+     
+    <!--   INTRO PAGE    ------------------------------------------------------------------------------------------------------->
     <div class="center" id="introPage" style="width: 50px; height: 200px">
         <button type="button" class="btn btn-danger shadow-none" onclick="event.preventDefault(); enterMainPage();">ENTER</button>
         <p class="bold" style="width: 200px; color: #b175dad7; font-size: 18px;">Audio Recommended</p>   
     </div>
 
+
+    <!--   MAIN PAGE    ------------------------------------------------------------------------------------------------------------>
     <div class="center" id="mainPage" style="width: 400px; height: 400px;">
         <div class="container-fluid" id="intro">
             <div class="row">
@@ -61,10 +65,16 @@
         </div>
     </div>
 
+
+   <!--   WORK EXPERIENCE PAGE    ------------------------------------------------------------------------------------------------------->
     <div class="center" id="workExperiencePage">
         <div class="title text-center" id="titleBar">
             <hr class="top-hr">
-            <h2>Stanislav Kozubenko</h2>
+            <ul class="list-inline">
+                <li class="list-inline-item devicon"><h2>Stanislav Kozubenko</h2></li>
+                <li class="list-inline-item devicon"><button class="close" type="button" onclick="event.preventDefault(); closePage(1);"><span class="pageCloser">X</span></button></li>
+            </ul>
+            <!-- <h2>Stanislav Kozubenko</h2> -->
             <h4>Computer Scientist</h4>
             <hr class="bottom-hr">
         </div>
@@ -154,7 +164,7 @@
     </div>
 
 
-
+    <!--   CONTACT ME PAGE    ------------------------------------------------------------------------------------------------------------>
     <div class="center" id="contactMePage">
         <div class="modal-dialog">
             <div class="modal-content">
