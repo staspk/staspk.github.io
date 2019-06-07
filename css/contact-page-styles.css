@@ -3,6 +3,11 @@
   min-width: 350px;
   width: 40vw;
   height: 80vh;
+  color: white;
+}
+
+#contactMePage a {
+  color: white;
 }
 
 #contactMePage .modal-content {

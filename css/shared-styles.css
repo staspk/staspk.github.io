@@ -53,7 +53,7 @@ a {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 7.5px;
     height: 0px;
 }
   
