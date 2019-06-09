@@ -3,14 +3,17 @@ var buttonHoverSound = new Audio('./../audio/button-hover.mp3');
 var twinkleSound = new Audio('./../audio/twinkle-sound.mp3');
 const introPage  =  $('#introPage');
 const mainPage   =  $('#mainPage');
-const contactMePage = $('#contactMePage');
 const workExperiencePage = $('#workExperiencePage');
-
+const educationPage = $('#educationPage');
+const projectHighlightsPage = $('#projectHighlightsPage');
+const contactMePage = $('#contactMePage');
 
 
 // introPage.toggle(); 
 mainPage.toggle();
 workExperiencePage.toggle();
+educationPage.toggle();
+projectHighlightsPage.toggle();
 contactMePage.toggle(); 
 
 
@@ -26,6 +29,16 @@ $(".twinkle-sound").hover(function () {
     twinkleSound.play();
 });
 
+/*
+    THING TO DO:
+    Dig through star code. They reset when page is moved away from!
+    Moved to my website - implement email, to not leave website.
+    Way too much repeating code - needs to be cleaned up.
+    Queue Object to handle animations?
+    Should be able to travel "sideways" page to page (to make)
+    Layout needs to be worked. Lack of consistency, and poor color choice.
+
+*/
 
 
 function enterMainPage() {
@@ -169,22 +182,24 @@ function reopenMainPage() {
 }
 
 
+// Function needs to be heavily reworked.
+    // Animations/Sounds needs to be changed for pages 1-3
 function openPage(pageNum) {    //pageNum 0 = mainPage, 1-4 in order of appearence of UI
 
     var pageToShow;
     switch(pageNum) {
         case 1: pageToShow = workExperiencePage; break;
-        case 2: pageToShow = contactMePage; break;
-        case 3: pageToShow = contactMePage; break;
+        case 2: pageToShow = educationPage; break;
+        case 3: pageToShow = projectHighlightsPage; break;
         case 4: pageToShow = contactMePage; break;
         default: alert("openPage(pageNum). illegal arg: " + pageNum);
     }
 
 
-    if(pageNum == 1) {
+    if(pageNum == 1 || pageNum == 2 || pageNum == 3 || pageNum == 4) {
         setStarField(1400, 2100);
         new Audio('./../audio/spacey-canvas-unfurl.mp3').play();
-        workExperiencePage.show('fold', 1000, function() {
+        pageToShow.show('fold', 1000, function() {
             setStarField(750, 1400);
             new Audio('./../audio/gmail-new-mail-sound.mp3').play();
             setTimeout(function () {
@@ -200,9 +215,9 @@ function openPage(pageNum) {    //pageNum 0 = mainPage, 1-4 in order of appearen
     if(pageNum == 4) {     //need to open Contact Page
         setStarField(1400, 2100);
         new Audio('./../audio/spacey-canvas-unfurl.mp3').play();
-        contactMePage.addClass("moveDownFadeIn");
-        contactMePage.show('fold', 1000, function() {
-            contactMePage.removeClass("moveDownFadeIn");
+        pageToShow.addClass("moveDownFadeIn");
+        pageToShow.show('fold', 1000, function() {
+            pageToShow.removeClass("moveDownFadeIn");
             setStarField(750, 1400);
             new Audio('./../audio/gmail-new-mail-sound.mp3').play();
             setTimeout(function () {
@@ -216,20 +231,26 @@ function openPage(pageNum) {    //pageNum 0 = mainPage, 1-4 in order of appearen
     }
 }
 
+
 function closePage(pageNum) {
-    
-}
 
+    var pageToClose;
+    switch(pageNum) {
+        case 1: pageToClose = workExperiencePage; break;
+        case 2: pageToClose = educationPage; break;
+        case 3: pageToClose = projectHighlightsPage; break;
+        case 4: pageToClose = contactMePage; break;
+        default: alert("openPage(pageNum). illegal arg: " + pageNum);
+    }
 
-function closeContactMePage() {
     setStarField(600, 1500);
-    contactMePage.addClass("moveUpFadeOut");    
+    pageToClose.addClass("moveUpFadeOut");    
     setTimeout(function () {    
         setStarField(1200, 1700);
             new Audio("./../audio/inverted-spacey-canvas-unfurl.mp3").play();
-            contactMePage.hide("fold", 1000, function() {
+            pageToClose.hide("fold", 1000, function() {
                 setStarField(1400, 2000);
-                contactMePage.removeClass("moveUpFadeOut");
+                pageToClose.removeClass("moveUpFadeOut");
                 reopenMainPage();
             });
     }, 100);
