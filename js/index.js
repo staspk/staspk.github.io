@@ -1,6 +1,6 @@
-var mainAudio = new Audio('./../audio/main-song.mp3');
-var buttonHoverSound = new Audio('./../audio/button-hover.mp3');
-var twinkleSound = new Audio('./../audio/twinkle-sound.mp3');
+var mainAudio = new Audio('/audio/main-song.mp3');
+var buttonHoverSound = new Audio('/audio/button-hover.mp3');
+var twinkleSound = new Audio('/audio/twinkle-sound.mp3');
 const introPage  =  $('#introPage');
 const mainPage   =  $('#mainPage');
 const workExperiencePage = $('#workExperiencePage');
@@ -41,12 +41,12 @@ function enterMainPage() {
     const link2 = $("#link2");
     const link3 = $("#link3");
     const link4 = $("#link4");
-    let introAudio =  new Audio('./../audio/intro-sound.mp3');
-    let introOutSound =  new Audio('./../audio/intro-out.mp3');
-    let deepWhooshSound = new Audio('./../audio/deep-whoosh.mp3');
-    let rhythmicEchoSound = new Audio('./../audio/whoosh-echo.mp3');
-    let whooshEchoSound1 = new Audio('./../audio/whoosh-echo1.mp3');
-    let whooshEchoSound2 = new Audio('./../audio/whoosh-echo1.mp3');
+    let introAudio =  new Audio('/audio/intro-sound.mp3');
+    let introOutSound =  new Audio('/audio/intro-out.mp3');
+    let deepWhooshSound = new Audio('/audio/deep-whoosh.mp3');
+    let rhythmicEchoSound = new Audio('/audio/whoosh-echo.mp3');
+    let whooshEchoSound1 = new Audio('/audio/whoosh-echo1.mp3');
+    let whooshEchoSound2 = new Audio('/audio/whoosh-echo1.mp3');
     introAudio.play();
     introOutSound.play();
     
