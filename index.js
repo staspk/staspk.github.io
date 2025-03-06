@@ -2,9 +2,10 @@ var mainAudio = new Audio('./audio/main-song.mp3');
 var buttonHoverSound = new Audio('./audio/button-hover.mp3');
 var twinkleSound = new Audio('./audio/twinkle-sound.mp3');
 
-const introPage  =  $('#introPage');
+// const introPage  =  $('#introPage');
+const introView     =  $('#view-intro');
 
-const homeView       =  $('#view-home');    const ewuLogo = $("#ewuLogo"); const nameDiv = $("#nameDiv"); const link1 = $("#link1"); const link2 = $("#link2"); const link3 = $("#link3"); const link4 = $("#link4");
+const homeView      =  $('#view-home');    const ewuLogo = $("#ewuLogo"); const nameDiv = $("#nameDiv"); const link1 = $("#link1"); const link2 = $("#link2"); const link3 = $("#link3"); const link4 = $("#link4");
 
 const workExperiencePage = $('#workExperiencePage');
 const educationPage = $('#educationPage');
@@ -42,7 +43,7 @@ function enterMainPage() {
     introAudio.play();
     introOutSound.play();
     
-    animateCSS('#introPage', 'intro-disappear', function() {
+    animateCSS('#view-intro', 'intro-disappear', function() {
         setStarField(1400);
 
         mainAudio.addEventListener('ended', function() {        //This event listener restarts the song when it ends
@@ -51,7 +52,7 @@ function enterMainPage() {
         }, false);
         mainAudio.play();
 
-        introPage.toggle();
+        introView.toggle();
         homeView.toggle();
         ewuLogo.toggle();
         nameDiv.toggle();
