@@ -1,6 +1,7 @@
-var mainAudio = new Audio('/audio/main-song.mp3');
-var buttonHoverSound = new Audio('/audio/button-hover.mp3');
-var twinkleSound = new Audio('/audio/twinkle-sound.mp3');
+var mainAudio = new Audio('./audio/main-song.mp3');
+var buttonHoverSound = new Audio('./audio/button-hover.mp3');
+var twinkleSound = new Audio('./audio/twinkle-sound.mp3');
+
 const introPage  =  $('#introPage');
 const mainPage   =  $('#mainPage');
 const workExperiencePage = $('#workExperiencePage');
@@ -22,17 +23,6 @@ $(".twinkle-sound").hover(function () {
     twinkleSound.play();
 });
 
-/*
-    THING TO DO:
-    Dig through star code. They reset when page is moved away from!
-    Moved to my website - implement email, to not leave website.
-    Way too much repeating code - needs to be cleaned up.
-    Queue Object to handle animations?
-    Should be able to travel "sideways" page to page (to make)
-    Layout needs to be worked. Lack of consistency, and poor color choice.
-
-*/
-
 
 function enterMainPage() {
     const ewuLogo = $("#ewuLogo");
@@ -41,12 +31,12 @@ function enterMainPage() {
     const link2 = $("#link2");
     const link3 = $("#link3");
     const link4 = $("#link4");
-    let introAudio =  new Audio('/audio/intro-sound.mp3');
-    let introOutSound =  new Audio('/audio/intro-out.mp3');
-    let deepWhooshSound = new Audio('/audio/deep-whoosh.mp3');
-    let rhythmicEchoSound = new Audio('/audio/whoosh-echo.mp3');
-    let whooshEchoSound1 = new Audio('/audio/whoosh-echo1.mp3');
-    let whooshEchoSound2 = new Audio('/audio/whoosh-echo1.mp3');
+    let introAudio =  new Audio('./audio/intro-sound.mp3');
+    let introOutSound =  new Audio('./audio/intro-out.mp3');
+    let deepWhooshSound = new Audio('./audio/deep-whoosh.mp3');
+    let rhythmicEchoSound = new Audio('./audio/whoosh-echo.mp3');
+    let whooshEchoSound1 = new Audio('./audio/whoosh-echo1.mp3');
+    let whooshEchoSound2 = new Audio('./audio/whoosh-echo1.mp3');
     introAudio.play();
     introOutSound.play();
     
@@ -98,9 +88,9 @@ function closeMainPage(event, linkClicked) {
 
     const ewuLogo = $("#ewuLogo");
     const nameHolder = $("#nameHolder");
-    const linkFadeOutSound1 = new Audio('./../audio/link-fade-out-sound.mp3');
-    const linkFadeOutSound2 = new Audio('./../audio/link-fade-out-sound.mp3');
-    const logoSlideOutSound = new Audio('./../audio/logo-slide-out-sound.mp3');
+    const linkFadeOutSound1 = new Audio('./audio/link-fade-out-sound.mp3');
+    const linkFadeOutSound2 = new Audio('./audio/link-fade-out-sound.mp3');
+    const logoSlideOutSound = new Audio('./audio/logo-slide-out-sound.mp3');
 
     let links = [ 1, 2, 3, 4 ];
     let clickedIndex = links.indexOf(linkClicked);
@@ -143,9 +133,9 @@ function reopenMainPage() {
     const link2 = $("#link2");
     const link3 = $("#link3");
     const link4 = $("#link4");
-    var deepWhoosh = new Audio('./../audio/deep-whoosh.mp3');
-    var invertPopIn1 = new Audio('./../audio/inverted-whoosh-popin.mp3');
-    var invertPopIn2 = new Audio('./../audio/inverted-whoosh-popin.mp3');
+    var deepWhoosh = new Audio('./audio/deep-whoosh.mp3');
+    var invertPopIn1 = new Audio('./audio/inverted-whoosh-popin.mp3');
+    var invertPopIn2 = new Audio('./audio/inverted-whoosh-popin.mp3');
 
     setStarField(1500, 2200);
     mainPage.toggle();
@@ -191,10 +181,10 @@ function openPage(pageNum) {    //pageNum 0 = mainPage, 1-4 in order of appearen
 
     if(pageNum == 1 || pageNum == 2 || pageNum == 3 || pageNum == 4) {
         setStarField(1400, 2100);
-        new Audio('./../audio/spacey-canvas-unfurl.mp3').play();
+        new Audio('./audio/spacey-canvas-unfurl.mp3').play();
         pageToShow.show('fold', 1000, function() {
             setStarField(750, 1400);
-            new Audio('./../audio/gmail-new-mail-sound.mp3').play();
+            new Audio('./audio/gmail-new-mail-sound.mp3').play();
             setTimeout(function () {
                 setStarField(500, 1200);
                 
@@ -207,12 +197,12 @@ function openPage(pageNum) {    //pageNum 0 = mainPage, 1-4 in order of appearen
 
     if(pageNum == 4) {     //need to open Contact Page
         setStarField(1400, 2100);
-        new Audio('./../audio/spacey-canvas-unfurl.mp3').play();
+        new Audio('./audio/spacey-canvas-unfurl.mp3').play();
         pageToShow.addClass("moveDownFadeIn");
         pageToShow.show('fold', 1000, function() {
             pageToShow.removeClass("moveDownFadeIn");
             setStarField(750, 1400);
-            new Audio('./../audio/gmail-new-mail-sound.mp3').play();
+            new Audio('./audio/gmail-new-mail-sound.mp3').play();
             setTimeout(function () {
                 setStarField(500, 1200);
                 setTimeout(function () {
@@ -240,7 +230,7 @@ function closePage(pageNum) {
     pageToClose.addClass("moveUpFadeOut");    
     setTimeout(function () {    
         setStarField(1200, 1700);
-            new Audio("./../audio/inverted-spacey-canvas-unfurl.mp3").play();
+            new Audio("./audio/inverted-spacey-canvas-unfurl.mp3").play();
             pageToClose.hide("fold", 1000, function() {
                 setStarField(1400, 2000);
                 pageToClose.removeClass("moveUpFadeOut");
