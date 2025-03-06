@@ -9,13 +9,6 @@ const projectHighlightsPage = $('#projectHighlightsPage');
 const contactMePage = $('#contactMePage');
 
 
-// introPage.toggle(); 
-mainPage.toggle();
-workExperiencePage.toggle();
-educationPage.toggle();
-projectHighlightsPage.toggle();
-contactMePage.toggle(); 
-
 
 $(".hover-sound").hover(function () {
     buttonHoverSound.play();
