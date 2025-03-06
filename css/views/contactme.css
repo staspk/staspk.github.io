@@ -1,4 +1,4 @@
-#contactMePage {
+#view-contact {
   background-color: transparent;
   min-width: 350px;
   width: 40vw;
@@ -6,21 +6,21 @@
   color: white;
 }
 
-#contactMePage a {
+#view-contact a {
   color: white;
 }
 
-#contactMePage .modal-content {
+#view-contact .modal-content {
   background-color: #b275da41;
 }
 
-#contactMePage .offset-my-fa {
+#view-contact .offset-my-fa {
   position: relative;
   left: -5px;
   top: 2px;
 }
 
-#contactMePage .btn-danger {
+#view-contact .btn-danger {
   margin-top: 10px;
   background-color: #79599487;
   border:none;

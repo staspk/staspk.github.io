@@ -2,15 +2,12 @@ var mainAudio = new Audio('./audio/main-song.mp3');
 var buttonHoverSound = new Audio('./audio/button-hover.mp3');
 var twinkleSound = new Audio('./audio/twinkle-sound.mp3');
 
-const introView     =  $('#view-intro');
-const homeView      =  $('#view-home');    const ewuLogo = $("#ewuLogo"); const nameDiv = $("#nameDiv"); const link1 = $("#link1"); const link2 = $("#link2"); const link3 = $("#link3"); const link4 = $("#link4");
+const introView      =  $('#view-intro');
+const homeView       =  $('#view-home');    const ewuLogo = $("#ewuLogo"); const nameDiv = $("#nameDiv"); const link1 = $("#link1"); const link2 = $("#link2"); const link3 = $("#link3"); const link4 = $("#link4");
 const workexpView    =  $('#view-workexp');
-
-
-const educationPage = $('#educationPage');
-const projectHighlightsPage = $('#projectHighlightsPage');
-const contactMePage = $('#contactMePage');
-
+const educationView  =  $('#view-education');
+const projectsView   =  $('#view-projects');
+const contactView    =  $('#view-contact');
 
 
 $(".hover-sound").hover(function () {
@@ -174,9 +171,9 @@ function openPage(pageNum) {    //pageNum 0 = homeView, 1-4 in order of appearen
     var pageToShow;
     switch(pageNum) {
         case 1: pageToShow = workexpView; break;
-        case 2: pageToShow = educationPage; break;
-        case 3: pageToShow = projectHighlightsPage; break;
-        case 4: pageToShow = contactMePage; break;
+        case 2: pageToShow = educationView; break;
+        case 3: pageToShow = projectsView; break;
+        case 4: pageToShow = contactView; break;
         default: alert("openPage(pageNum). illegal arg: " + pageNum);
     }
 
@@ -222,9 +219,9 @@ function closePage(pageNum) {
     var pageToClose;
     switch(pageNum) {
         case 1: pageToClose = workexpView; break;
-        case 2: pageToClose = educationPage; break;
-        case 3: pageToClose = projectHighlightsPage; break;
-        case 4: pageToClose = contactMePage; break;
+        case 2: pageToClose = educationView; break;
+        case 3: pageToClose = projectsView; break;
+        case 4: pageToClose = contactView; break;
         default: alert("openPage(pageNum). illegal arg: " + pageNum);
     }
 
