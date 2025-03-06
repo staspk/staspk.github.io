@@ -3,7 +3,9 @@ var buttonHoverSound = new Audio('./audio/button-hover.mp3');
 var twinkleSound = new Audio('./audio/twinkle-sound.mp3');
 
 const introPage  =  $('#introPage');
-const mainPage   =  $('#mainPage');
+
+const homeView       =  $('#view-home');    const ewuLogo = $("#ewuLogo"); const nameDiv = $("#nameDiv"); const link1 = $("#link1"); const link2 = $("#link2"); const link3 = $("#link3"); const link4 = $("#link4");
+
 const workExperiencePage = $('#workExperiencePage');
 const educationPage = $('#educationPage');
 const projectHighlightsPage = $('#projectHighlightsPage');
@@ -25,12 +27,12 @@ $(".twinkle-sound").hover(function () {
 
 
 function enterMainPage() {
-    const ewuLogo = $("#ewuLogo");
-    const nameHolder = $("#nameHolder");
-    const link1 = $("#link1");
-    const link2 = $("#link2");
-    const link3 = $("#link3");
-    const link4 = $("#link4");
+    // const ewuLogo = $("#ewuLogo");
+    // const nameHolder = $("#nameDiv");
+    // const link1 = $("#link1");
+    // const link2 = $("#link2");
+    // const link3 = $("#link3");
+    // const link4 = $("#link4");
     let introAudio =  new Audio('./audio/intro-sound.mp3');
     let introOutSound =  new Audio('./audio/intro-out.mp3');
     let deepWhooshSound = new Audio('./audio/deep-whoosh.mp3');
@@ -50,15 +52,15 @@ function enterMainPage() {
         mainAudio.play();
 
         introPage.toggle();
-        mainPage.toggle();
+        homeView.toggle();
         ewuLogo.toggle();
-        nameHolder.toggle();
+        nameDiv.toggle();
         link1.toggle();
         link2.toggle();
         link3.toggle();
         link4.toggle();
         
-        nameHolder.fadeToggle('slow');
+        nameDiv.fadeToggle('slow');
         deepWhooshSound.play();
         ewuLogo.show('slide', {direction: 'left'}, 110, function() {
             setStarField(1100, 2000);
@@ -87,7 +89,7 @@ function closeMainPage(event, linkClicked) {
     event.preventDefault();
 
     const ewuLogo = $("#ewuLogo");
-    const nameHolder = $("#nameHolder");
+    // const nameHolder = $("#nameHolder");
     const linkFadeOutSound1 = new Audio('./audio/link-fade-out-sound.mp3');
     const linkFadeOutSound2 = new Audio('./audio/link-fade-out-sound.mp3');
     const logoSlideOutSound = new Audio('./audio/logo-slide-out-sound.mp3');
@@ -113,11 +115,11 @@ function closeMainPage(event, linkClicked) {
             setStarField(1000, 1700);
             $("#link" + links[2]).hide('explode', {direction: 'left'}, 100, function() {
                 setStarField(1200, 2000);
-                nameHolder.hide('drop', {direction: 'right'}, 110, function() {
+                nameDiv.hide('drop', {direction: 'right'}, 110, function() {
                     setStarField(1000, 1800);
                     ewuLogo.hide('drop', {direction: 'left'}, 110, function() {
                         setStarField(800, 1600);
-                        mainPage.toggle();
+                        homeView.toggle();
                         openPage(linkClicked);
                     });
                 });
@@ -128,7 +130,7 @@ function closeMainPage(event, linkClicked) {
 
 function reopenMainPage() {
     const ewuLogo = $("#ewuLogo");
-    const nameHolder = $("#nameHolder");
+    // const nameHolder = $("#nameHolder");
     const link1 = $("#link1");
     const link2 = $("#link2");
     const link3 = $("#link3");
@@ -138,10 +140,10 @@ function reopenMainPage() {
     var invertPopIn2 = new Audio('./audio/inverted-whoosh-popin.mp3');
 
     setStarField(1500, 2200);
-    mainPage.toggle();
+    homeView.toggle();
     ewuLogo.show('drop', {direction: 'left'}, 110, function() {
         deepWhoosh.play();
-        nameHolder.show('drop', {direction: 'right'}, 110, function() {
+        nameDiv.show('drop', {direction: 'right'}, 110, function() {
             setStarField(1300, 2000);
             invertPopIn1.play();
             link4.show('explode', {direction: 'left'}, 100, function() {
@@ -167,7 +169,7 @@ function reopenMainPage() {
 
 // Function needs to be heavily reworked.
     // Animations/Sounds needs to be changed for pages 1-3
-function openPage(pageNum) {    //pageNum 0 = mainPage, 1-4 in order of appearence of UI
+function openPage(pageNum) {    //pageNum 0 = homeView, 1-4 in order of appearence of UI
 
     var pageToShow;
     switch(pageNum) {
