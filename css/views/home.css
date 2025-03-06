@@ -2,13 +2,13 @@
  ----   Main Page    --------------
 */
 
-#mainPage * {
+#view-home * {
     position: relative;
     color:white;
     overflow: visible;
   }
   
-#mainPage #ewuLogo {
+#view-home #ewu-logo {
     width: 180px;
     height: 180px;
     left: -20px;
@@ -17,33 +17,33 @@
     animation: my-hue-rotate 5s linear 0s infinite;
 }
 
-#mainPage h1:hover, #mainPage a:hover { 
+#view-home h1:hover, #view-home a:hover { 
     color: #9c64c2f1;
     text-decoration: none;
     animation: colorRotate 3s 0s infinite, my-hover 5s linear 0s infinite;
 }
 
-#mainPage h1:hover { 
+#view-home h1:hover { 
     animation: colorRotate 3s linear 0s infinite, my-shake 9s linear 0s infinite;
 }
 
-#mainPage #firstName-mainPage {
+#view-home #firstname {
     top: -145px;
     left: 179px;
 }
 
-#mainPage #lastName-mainPage {
+#view-home #lastname {
     top: -157px;
     left: 146px;
 }
 
-#mainPage #linkRow {
+#view-home #linkRow {
     width: 500px;
     left: -60px;
     top: -120px;
 }
 
-#mainPage #linkRow * {
+#view-home #linkRow * {
     margin: 10px;   
 }
 

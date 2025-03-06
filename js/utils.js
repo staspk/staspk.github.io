@@ -15,18 +15,6 @@ function setSesVar(sesVar, varVal) {
 
 
 /*
- ----   STARFIELD UTILS    --------------
-*/
-
-function setStarField(speed, starAmount) {
-    if(speed != null)
-        starfield.speed = speed;
-    if(starAmount != null)
-        starfield.set_amount(starAmount);
-}
-
-
-/*
  ----   STRING UTILS    --------------
 */
 
@@ -43,6 +31,9 @@ function stringContains(stringToSearch, searchedString) {      //return boolean
  ----   ANIMATION UTILS    --------------
 */
 
+/**
+ * My helper function in utils.js.
+ */
 function animateCSS(element, animationName, callback) {
     const node = document.querySelector(element);
     node.classList.add('animated', animationName);

@@ -1,369 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- Title -->
-    <title>Stanislav Kozubenko</title>
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-    <link rel="manifest" href="favicons/site.webmanifest">
-    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="favicons/favicon.ico">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-config" content="favicons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/libraries/bootstrap-4.1.3.css">    <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/libraries/animate.css">            <!-- Animate.css -->
-    <link rel="stylesheet" href="css/libraries/jquery-ui.css">          <!-- Jquery UI -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">      <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">        <!-- Devicons -->
-    
-    <link rel="stylesheet" href="css/shared-styles.css">                <!-- MyStyles -->
-    <link rel="stylesheet" href="css/intro-page-styles.css">
-    <link rel="stylesheet" href="css/main-page-styles.css">
-    <link rel="stylesheet" href="css/work-experience-styles.css">
-    <link rel="stylesheet" href="css/contact-page-styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Title -->
+  <title>Stanislav Kozubenko</title>
+  
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="manifest" href="favicons/site.webmanifest">
+  <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="msapplication-config" content="favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/libraries/bootstrap-4.1.3.css">
+  <link rel="stylesheet" href="css/libraries/animate.css">
+  <link rel="stylesheet" href="css/libraries/jquery-ui.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+  
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/views/intro.css">
+  <link rel="stylesheet" href="css/views/home.css">
+  <link rel="stylesheet" href="css/views/workexp.css">
+  <link rel="stylesheet" href="css/views/contactme.css">
 </head>
 
 <body> 
-    <canvas id="main_canvas"></canvas>  <!-- For Starfield -->
-
-     
-    <!--   INTRO PAGE    ------------------------------------------------------------------------------------------------------->
-    <div class="center" id="introPage" style="width: 50px; height: 200px">
-        <button type="button" class="btn btn-danger shadow-none" onclick="event.preventDefault(); enterMainPage();">ENTER</button>
-        <p class="bold" style="width: 200px; color: #b175dad7; font-size: 18px;">Audio Recommended</p>   
+  <canvas id="background-canvas"></canvas>
+  
+  
+  <!--   INTRO VIEW    ------------------------------------------------------------------------------------------------------->
+  <div class="center" id="view-intro" style="width: 50px; height: 200px">
+    <button type="button" class="btn btn-danger shadow-none" onclick="openMainView();">ENTER</button>
+    <p class="bold" style="width: 200px; color: #b175dad7; font-size: 18px;">Audio Recommended</p>   
+  </div>
+  
+  
+  <!--   HOME VIEW    ------------------------------------------------------------------------------------------------------------>
+  <div id="view-home" class="center" style="display: none; width: 400px; height: 400px;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <img id="ewu-logo" src="./images/eagle-red.svg">
+        </div>
+        <div id="nameDiv" class="col">
+          <a class="twinkle-sound" id="firstname" onclick="event.preventDefault();"><h1>Stanislav</h1></a> 
+          <a class="twinkle-sound" id="lastname" onclick="event.preventDefault();"><h1>Kozubenko</h1></a> 
+        </div>
+      </div>
+      <div id="linkRow" class="row">
+        <a class="bold clickable hover-sound" id="link1" onclick="closeMainPage(1)"> Work Experience</a>
+        <a class="bold clickable hover-sound" id="link2" onclick="closeMainPage(2)"> Education</a>
+        <a class="bold clickable hover-sound" id="link3" onclick="closeMainPage(3)"> Project Highlights</a>
+        <a class="bold clickable hover-sound" id="link4" onclick="closeMainPage(4)"> Contact Me</a>
+      </div>
     </div>
-
-
-    <!--   MAIN PAGE    ------------------------------------------------------------------------------------------------------------>
-    <div class="center" id="mainPage" style="width: 400px; height: 400px;">
-        <div class="container-fluid" id="intro">
-            <div class="row">
-                <div class="col">
-                    <img id="ewuLogo" src="./images/eagle-red.svg">
-                </div>
-                <div id="nameHolder" class="col">
-                    <a class="twinkle-sound" id="firstName-mainPage" href="" onclick="event.preventDefault();"><h1>Stanislav</h1></a> 
-                    <a class="twinkle-sound" id="lastName-mainPage" href="" onclick="event.preventDefault();"><h1>Kozubenko</h1></a> 
-                </div>
-            </div>
-            <div class="row" id="linkRow">
-                <a class="bold hover-sound" id="link1" href="" onclick="closeMainPage(event, 1)"> Work Experience</a>
-                <a class="bold hover-sound" id="link2" href="" onclick="closeMainPage(event, 2)"> Education</a>
-                <a class="bold hover-sound" id="link3" href="" onclick="closeMainPage(event, 3)"> Project Highlights</a>
-                <a class="bold hover-sound" id="link4" href="" onclick="closeMainPage(event, 4)"> Contact Me</a>
-            </div>
-        </div>
+  </div>
+  
+  
+  <!--   WORK EXPERIENCE VIEW    ------------------------------------------------------------------------------------------------------->
+  <div id="view-workexp" class="center my-page" style="display: none;">
+    <div id="titleBar" class="title text-center my-title-bar">
+      <hr class="top-hr">
+      <ul class="list-inline">
+        <li class="list-inline-item devicon"><h2>Stanislav Kozubenko</h2></li>
+        <li class="list-inline-item devicon"><button class="close" type="button" onclick="event.preventDefault(); closePage(1);"><span class="pageCloser">X</span></button></li>
+      </ul>
+      <h4>Computer Scientist</h4>
+      <hr class="bottom-hr">
     </div>
-
-
-   <!--   WORK EXPERIENCE PAGE    ------------------------------------------------------------------------------------------------------->
-    <div class="center my-page" id="workExperiencePage">
-        <div class="title text-center my-title-bar" id="titleBar">
-            <hr class="top-hr">
-            <ul class="list-inline">
-                <li class="list-inline-item devicon"><h2>Stanislav Kozubenko</h2></li>
-                <li class="list-inline-item devicon"><button class="close" type="button" onclick="event.preventDefault(); closePage(1);"><span class="pageCloser">X</span></button></li>
-            </ul>
-            <h4>Computer Scientist</h4>
-            <hr class="bottom-hr">
+    
+    <div class="bodySection">
+      <div id="objectiveSection">
+        <div class="row">
+          <div class="col-md-10">
+            <h4 class="text-center">Objective</h4>
+            <p>Since I am a recent graduate of EWU that is currently happily employed at Itron, an American technology company that offers products and services on energy and water resource management, I am off the market to employers.</p>
+          </div>
         </div>
-
-        <div class="bodySection">
-            <div id="objectiveSection">
-                <div class="row">
-                    <div class="col-md-10">
-                        <h4 class="text-center">Objective</h4>
-                        <p>Since I am a recent graduate of EWU that is currently happily employed at Itron, an American technology company that offers products and services on energy and water resource management, I am off the market to employers.</p>
-                    </div>
-                </div>
-            </div>
-
-            <br/>
-            <hr style="border-width: 2px; top: -3px;"/>
-            <br/>
-
-            <div id="workExperienceSection">
-                <h4 class="text-center" style="margin-bottom: 4px;">Work Experience Highlights</h4>
-
-                <div class="row experience-title">
-                    <div class="col-md-9">
-                        <h5>Itron</h5>
-                        <h6>Internship - Data Specialist</h6>
-                    </div>
-                    <div class="col-md-3" style="text-align: right;">
-                        <h6>July 2018</h6>
-                        <h6>Sept 2018</h6>
-                    </div>
-                </div>
-                <div class="row experience-summary">
-                    <div class="col-md-12">
-                        <p>Automated collection and organization of important performance indicators, static analysis reports, bug analysis, among others.</p>
-                        <!-- <ul>
-                            <li>Lead - UI design and development.</li>
-                            <li>WordPress expert - Configuration, maintenance and custom development.</li>
-                        </ul> -->
-                    </div>
-                </div>
-
-                <br/>
-                <hr style="border-width: 2px; top: -3px;"/>
-                <br/>
-
-                <div class="row experience-title">
-                    <div class="col-md-9">
-                        <h5>Painter</h5>
-                        <h6>Self-Employed</h6>
-                    </div>
-                    <div class="col-md-3" style="text-align: right;">
-                        <h6>April 2016</h6>
-                        <h6>February 2018</h6>
-                    </div>
-                </div>
-                <div class="row experience-summary">
-                    <div class="col-md-12">
-                        <p>Ran my own industrial painting business, with stints working alongside other painters.</p>
-                    </div>
-                </div>
-
-                <br/>
-                <hr style="border-width: 2px; top: -3px;"/>
-                <br/>
-
-                <div class="row experience-title">
-                    <div class="col-md-9">
-                        <h5>Supervisor / Cook / Cashier</h5>
-                        <h6>Stop N Go</h6>
-                    </div>
-                    <div class="col-md-3" style="text-align: right;">
-                        <h6>June 2010</h6>
-                        <h6>July 2012</h6>
-                    </div>
-                </div>
-                <div class="row experience-summary">
-                    <div class="col-md-12">
-                        <p>My first job in highschool, this was the beginning of my "career".</p>
-                    </div>
-                </div>
-
-                <br/>
-                <hr style="border-width: 3px; top: -3px;"/>
-            </div>
+      </div>
+      
+      <br/>
+      <hr style="border-width: 2px; top: -3px;"/>
+      <br/>
+      
+      <div id="workExperienceSection">
+        <h4 class="text-center" style="margin-bottom: 4px;">Work Experience Highlights</h4>
+        
+        <div class="row experience-title">
+          <div class="col-md-9">
+            <h5>Itron</h5>
+            <h6>Internship - Data Specialist</h6>
+          </div>
+          <div class="col-md-3" style="text-align: right;">
+            <h6>July 2018</h6>
+            <h6>Sept 2018</h6>
+          </div>
         </div>
+        <div class="row experience-summary">
+          <div class="col-md-12">
+            <p>Automated collection and organization of important performance indicators, static analysis reports, bug analysis, among others.</p>
+            <!-- <ul>
+              <li>Lead - UI design and development.</li>
+              <li>WordPress expert - Configuration, maintenance and custom development.</li>
+            </ul> -->
+          </div>
+        </div>
+        
+        <br/>
+        <hr style="border-width: 2px; top: -3px;"/>
+        <br/>
+        
+        <div class="row experience-title">
+          <div class="col-md-9">
+            <h5>Painter</h5>
+            <h6>Self-Employed</h6>
+          </div>
+          <div class="col-md-3" style="text-align: right;">
+            <h6>April 2016</h6>
+            <h6>February 2018</h6>
+          </div>
+        </div>
+        <div class="row experience-summary">
+          <div class="col-md-12">
+            <p>Ran my own industrial painting business, with stints working alongside other painters.</p>
+          </div>
+        </div>
+        
+        <br/>
+        <hr style="border-width: 2px; top: -3px;"/>
+        <br/>
+        
+        <div class="row experience-title">
+          <div class="col-md-9">
+            <h5>Supervisor / Cook / Cashier</h5>
+            <h6>Stop N Go</h6>
+          </div>
+          <div class="col-md-3" style="text-align: right;">
+            <h6>June 2010</h6>
+            <h6>July 2012</h6>
+          </div>
+        </div>
+        <div class="row experience-summary">
+          <div class="col-md-12">
+            <p>My first job in highschool, this was the beginning of my "career".</p>
+          </div>
+        </div>
+        
+        <br/>
+        <hr style="border-width: 3px; top: -3px;"/>
+      </div>
     </div>
-
-
-    <!--   EDUCATION PAGE    ------------------------------------------------------------------------------------------------------->
-    <div class="center my-page" id="educationPage">
-        <div class="title text-center myTitleBar" id="titleBar">
-            <hr class="top-hr">
-            <ul class="list-inline">
-                <li class="list-inline-item devicon"><h2>Stanislav Kozubenko</h2></li>
-                <li class="list-inline-item devicon"><button class="close" type="button" onclick="event.preventDefault(); closePage(2);"><span class="pageCloser">X</span></button></li>
-            </ul>
-            <h4>Computer Scientist</h4>
-            <hr class="bottom-hr">
-        </div>
-
-        <div class="bodySection">
-
-            <div id="workExperienceSection">
-                <h4 class="text-center" style="margin-bottom: 15px;">Education</h4>
-
-                <div class="row experience-title">
-                    <div class="col-md-9">
-                        <h5>Eastern Washington University</h5>
-                        <h6>Bachelor of Computer Science</h6>
-                    </div>
-                    <div class="col-md-3" style="text-align: right;">
-                        <h6>2018</h6>
-                        <h6>2019</h6>
-                    </div>
-                </div>
-
-                <br/>
-                <hr style="border-width: 2px; top: -3px;"/>
-                <br/>
-
-                <div class="row experience-title">
-                    <div class="col-md-9">
-                        <h5>Spokane Community College</h5>
-                        <h6>Associate in Arts</h6>
-                    </div>
-                    <div class="col-md-3" style="text-align: right;">
-                        <h6>2010</h6>
-                        <h6>2013</h6>
-                    </div>
-                </div>
-
-                <br/>
-                <hr style="border-width: 2px; top: -3px;"/>
-                <br/>
-
-                <div class="row experience-title">
-                    <div class="col-md-9">
-                        <h5>Ferris High School</h5>
-                        <h6>High School Diploma</h6>
-                    </div>
-                    <div class="col-md-3" style="text-align: right;">
-                        <h6>2008</h6>
-                        <h6>2012</h6>
-                    </div>
-                </div>
-
-                <br/>
-                <hr style="border-width: 3px; top: -3px;"/>
-            </div>
-        </div>
+  </div>
+  
+  
+  <!--   EDUCATION PAGE    ------------------------------------------------------------------------------------------------------->
+  <div class="center my-page" id="view-education" style="display: none;">
+    <div class="title text-center myTitleBar" id="titleBar">
+      <hr class="top-hr">
+      <ul class="list-inline">
+        <li class="list-inline-item devicon"><h2>Stanislav Kozubenko</h2></li>
+        <li class="list-inline-item devicon"><button class="close" type="button" onclick="event.preventDefault(); closePage(2);"><span class="pageCloser">X</span></button></li>
+      </ul>
+      <h4>Computer Scientist</h4>
+      <hr class="bottom-hr">
     </div>
-
-
-
-    <!--   PROJECT HIGHLIGHTS PAGE    ------------------------------------------------------------------------------------------------------->
-    <div class="center my-page" id="projectHighlightsPage">
-            <div class="title text-center" id="titleBar">
-                <hr class="top-hr">
-                <ul class="list-inline">
-                    <li class="list-inline-item devicon"><h2>Stanislav Kozubenko</h2></li>
-                    <li class="list-inline-item devicon"><button class="close" type="button" onclick="event.preventDefault(); closePage(3);"><span class="pageCloser">X</span></button></li>
-                </ul>
-                <h4>Computer Scientist</h4>
-                <hr class="bottom-hr">
-            </div>
     
-            <div class="bodySection">
-    
-                <div id="workExperienceSection">
-                    <h4 class="text-center" style="margin-bottom: 4px;">Work Experience Highlights</h4>
-    
-                    <div class="row experience-title">
-                        <div class="col-md-9">
-                            <h5>Universal Data Center</h5>
-
-                        </div>
-                        <div class="col-md-3" style="text-align: right;">
-                            <h6>Dec 2017</h6>
-                            <h6>May 2018</h6>
-                        </div>
-                    </div>
-                    <div class="row experience-summary">
-                        <div class="col-md-12">
-                            <p>∙ Was involved in building a web-based data center prototype that could receive, manipulate, and analyze incoming data points.</p>
-                            <p>∙ Heavy use of the ASP.NET MVC4 framework, switching over to Angular at the end.</p>
-                            <p>∙ The project was eventually transferred to the customer and was used as an endpoint and sensor testing framework.</p>
-                        </div>
-                    </div>
-    
-                    <br/>
-                    <hr style="border-width: 2px; top: -3px;"/>
-                    <br/>
-    
-                    <div class="row experience-title">
-                        <div class="col-md-9">
-                            <h5>Augmented Reality Racing Game</h5>
-                        </div>
-                        <div class="col-md-3" style="text-align: right;">
-                            <h6>Jan 2019</h6>
-                            <h6>April 2019</h6>
-                        </div>
-                    </div>
-                    <div class="row experience-summary">
-                        <div class="col-md-12">
-                            <p>∙ Presented our team project at Microsoft’s yearly computer science fair, with the goal of attracting more people into the CS field through a flashy product.</p>
-                            <p>∙ Developed an Android AR racing game, using Google’s ARCore SDK as our foundation.</p>
-                            <p>∙ The player draws an enclosed shape on a whiteboard, which gets analyzed by the phone. The marker lines then get converted into a race track, and the player races their car around it.</p>
-                        </div>
-                    </div>
-    
-                    <br/>
-                    <hr style="border-width: 3px; top: -3px;"/>
-                </div>
-            </div>
+    <div class="bodySection">
+      
+      <div id="workExperienceSection">
+        <h4 class="text-center" style="margin-bottom: 15px;">Education</h4>
+        
+        <div class="row experience-title">
+          <div class="col-md-9">
+            <h5>Eastern Washington University</h5>
+            <h6>Bachelor of Computer Science</h6>
+          </div>
+          <div class="col-md-3" style="text-align: right;">
+            <h6>2018</h6>
+            <h6>2019</h6>
+          </div>
         </div>
-
-
-
-    <!--   CONTACT ME PAGE    ------------------------------------------------------------------------------------------------------------>
-    <div class="center" id="contactMePage">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Contact Me</h4>
-                    <button class="close" data-dismiss="modal" type="button" onclick="event.preventDefault(); closePage(4);"><span class="pageCloser">X</span></button>
-                </div>
-                <div class="modal-body">
-                    <form id="Contactmeform" action="https://formspree.io/staspk@gmail.com" method="POST">
-                        <div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-2x fa-user fa-fw offset-my-fa"></i></span><input class="form-control" id="UN" type="text" placeholder="Enter Your Name" name="name" autocomplete="off" /></div><br/>
-                        <div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-2x fa-envelope-o fa-fw offset-my-fa"></i></span><input class="form-control" id="CME" type="text" placeholder="Enter Your Email Address" name="email" autocomplete="off" /></div><br/><label for="contact-me-message-area">Email Contents:</label>
-                        <textarea class="form-control" id="contact-me-message-area" rows="5" name="message" onkeyup="countChar(this)" maxlength="300"></textarea>
-
-                        <div class="text-centered"><button class="btn btn-md btn-danger shadow-none onclickspin" type="submit" id="CMSub">SUBMIT</button></div>
-                    </form>
-                </div>
-                <div class="modal-footer"><a href="https://linkedin.com/in/stanislav-kozubenko"><i class="fa fa-linkedin fa-2x" id="linkedIn"></i></a><a href="https://github.com/staspk"><i class="fa fa-github fa-2x" id="github"></i></a></div>
-            </div>
+        
+        <br/>
+        <hr style="border-width: 2px; top: -3px;"/>
+        <br/>
+        
+        <div class="row experience-title">
+          <div class="col-md-9">
+            <h5>Spokane Community College</h5>
+            <h6>Associate in Arts</h6>
+          </div>
+          <div class="col-md-3" style="text-align: right;">
+            <h6>2010</h6>
+            <h6>2013</h6>
+          </div>
         </div>
+        
+        <br/>
+        <hr style="border-width: 2px; top: -3px;"/>
+        <br/>
+        
+        <div class="row experience-title">
+          <div class="col-md-9">
+            <h5>Ferris High School</h5>
+            <h6>High School Diploma</h6>
+          </div>
+          <div class="col-md-3" style="text-align: right;">
+            <h6>2008</h6>
+            <h6>2012</h6>
+          </div>
+        </div>
+        
+        <br/>
+        <hr style="border-width: 3px; top: -3px;"/>
+      </div>
     </div>
-
-
-
-
-
+  </div>
+  
+  
+  
+  <!--   PROJECT HIGHLIGHTS PAGE    ------------------------------------------------------------------------------------------------------->
+  <div class="center my-page" id="view-projects" style="display: none;">
+    <div class="title text-center" id="titleBar">
+      <hr class="top-hr">
+      <ul class="list-inline">
+        <li class="list-inline-item devicon"><h2>Stanislav Kozubenko</h2></li>
+        <li class="list-inline-item devicon"><button class="close" type="button" onclick="event.preventDefault(); closePage(3);"><span class="pageCloser">X</span></button></li>
+      </ul>
+      <h4>Computer Scientist</h4>
+      <hr class="bottom-hr">
+    </div>
     
-
-
-    <!-- For Project Highlights Section -->
-    <!-- <ul class="list-inline">
-            <li class="list-inline-item devicon"><i class="devicon-android-plain"></i></li>
-            <li class="list-inline-item devicon"><i class="devicon-java-plain"></i></li>
-            <li class="list-inline-item devicon"><i class="devicon-csharp-plain"></i></li>
-            <li class="list-inline-item devicon"><i class="devicon-jquery-plain-wordmark"></i></li>
-            <li class="list-inline-item devicon"><i class="devicon-html5-plain colored"></i></li>
-            <li class="list-inline-item devicon"><i class="devicon-angularjs-plain colored"></i></li>
-            <li class="list-inline-item devicon"><i class="devicon-linux-plain"></i></li>
-    </ul> -->
-
-    <!-- <div class="row">
-            <div class="col-md-3 col-sm-3">
-            <p>Business Analysis</p>
-            <p>Project Management</p>
-            <p>WordPress Management</p>
-            </div>
-            <div class="col-md-3 col-sm-3">
-            <p>Development</p>
-            <p>Design</p>
-            <p>Linux Admin</p>
-            </div>
-            <div class="col-md-3 col-sm-3">
-            <p>Agile Development</p>
-            <p>Scrum of Scrum</p>
-            <p>Frontend Development</p>
-            </div>
-            <div class="col-md-3 col-sm-3">
-            <p>Code Review</p>
-            <p>Peer Review</p>
-            <p>Fullstack Development</p>
-            </div>
-        </div> -->
-    
-<!--Scripts -->
-<script src="js/libraries/jquery-3.4.1.min.js"></script>          <!-- jQuery -->
-<script src="js/libraries/dat.gui.min.js"></script>
-<script src="js/libraries/jquery-ui.js"></script>
-<script src="js/my-star-scripts.js"></script>
-<script src="js/utils.js"></script>                               <!-- My Utilities -->
-<script src="js/siteScripts.js"></script>                         <!-- My Site Scripts -->
-
-
-
+    <div class="bodySection">
+      
+      <div id="workExperienceSection">
+        <h4 class="text-center" style="margin-bottom: 4px;">Project Highlights</h4>
+        
+        <div class="row experience-title">
+          <div class="col-md-9">
+            <h5>Universal Data Center</h5>
+            
+          </div>
+          <div class="col-md-3" style="text-align: right;">
+            <h6>Dec 2017</h6>
+            <h6>May 2018</h6>
+          </div>
+        </div>
+        <div class="row experience-summary">
+          <div class="col-md-12">
+            <p>∙ Was involved in building a web-based data center prototype that could receive, manipulate, and analyze incoming data points.</p>
+            <p>∙ Heavy use of the ASP.NET MVC4 framework, switching over to Angular at the end.</p>
+            <p>∙ The project was eventually transferred to the customer and was used as an endpoint and sensor testing framework.</p>
+          </div>
+        </div>
+        
+        <br/>
+        <hr style="border-width: 2px; top: -3px;"/>
+        <br/>
+        
+        <div class="row experience-title">
+          <div class="col-md-9">
+            <h5>Augmented Reality Racing Game</h5>
+          </div>
+          <div class="col-md-3" style="text-align: right;">
+            <h6>Jan 2019</h6>
+            <h6>April 2019</h6>
+          </div>
+        </div>
+        <div class="row experience-summary">
+          <div class="col-md-12">
+            <p>∙ Presented our team project at Microsoft’s yearly computer science fair, with the goal of attracting more people into the CS field through a flashy product.</p>
+            <p>∙ Developed an Android AR racing game, using Google’s ARCore SDK as our foundation.</p>
+            <p>∙ The player draws an enclosed shape on a whiteboard, which gets analyzed by the phone. The marker lines then get converted into a race track, and the player races their car around it.</p>
+          </div>
+        </div>
+        
+        <br/>
+        <hr style="border-width: 3px; top: -3px;"/>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <!--   CONTACT ME PAGE    ------------------------------------------------------------------------------------------------------------>
+  <div class="center" id="view-contact" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Contact Me</h4>
+          <button class="close" data-dismiss="modal" type="button" onclick="event.preventDefault(); closePage(4);"><span class="pageCloser">X</span></button>
+        </div>
+        <div class="modal-body">
+          <form id="Contactmeform" action="https://formspree.io/staspk@gmail.com" method="POST">
+            <div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-2x fa-user fa-fw offset-my-fa"></i></span><input class="form-control" id="UN" type="text" placeholder="Enter Your Name" name="name" autocomplete="off" /></div><br/>
+            <div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-2x fa-envelope-o fa-fw offset-my-fa"></i></span><input class="form-control" id="CME" type="text" placeholder="Enter Your Email Address" name="email" autocomplete="off" /></div><br/><label for="contact-me-message-area">Email Contents:</label>
+            <textarea class="form-control" id="contact-me-message-area" rows="5" name="message" onkeyup="countChar(this)" maxlength="300"></textarea>
+            
+            <div class="text-centered"><button class="btn btn-md btn-danger shadow-none onclickspin" type="submit" id="CMSub">SUBMIT</button></div>
+          </form>
+        </div>
+        <div class="modal-footer"><a href="https://linkedin.com/in/stanislav-kozubenko"><i class="fa fa-linkedin fa-2x" id="linkedIn"></i></a><a href="https://github.com/staspk"><i class="fa fa-github fa-2x" id="github"></i></a></div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- For Project Highlights Section -->
+  <!-- <ul class="list-inline">
+    <li class="list-inline-item devicon"><i class="devicon-android-plain"></i></li>
+    <li class="list-inline-item devicon"><i class="devicon-java-plain"></i></li>
+    <li class="list-inline-item devicon"><i class="devicon-csharp-plain"></i></li>
+    <li class="list-inline-item devicon"><i class="devicon-jquery-plain-wordmark"></i></li>
+    <li class="list-inline-item devicon"><i class="devicon-html5-plain colored"></i></li>
+    <li class="list-inline-item devicon"><i class="devicon-angularjs-plain colored"></i></li>
+    <li class="list-inline-item devicon"><i class="devicon-linux-plain"></i></li>
+  </ul> -->
+  
+  <!-- <div class="row">
+    <div class="col-md-3 col-sm-3">
+      <p>Business Analysis</p>
+      <p>Project Management</p>
+      <p>WordPress Management</p>
+    </div>
+    <div class="col-md-3 col-sm-3">
+      <p>Development</p>
+      <p>Design</p>
+      <p>Linux Admin</p>
+    </div>
+    <div class="col-md-3 col-sm-3">
+      <p>Agile Development</p>
+      <p>Scrum of Scrum</p>
+      <p>Frontend Development</p>
+    </div>
+    <div class="col-md-3 col-sm-3">
+      <p>Code Review</p>
+      <p>Peer Review</p>
+      <p>Fullstack Development</p>
+    </div>
+  </div> -->
+  
+  <!--Scripts -->
+  <script src="js/libraries/jquery-3.4.1.min.js"></script>
+  <script src="js/libraries/dat.gui.min.js"></script>
+  <script src="js/libraries/jquery-ui.js"></script>
+  <script src="js/StarCanvas.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="./index.js"></script>
+  
+  
+  
 </body>
 </html>

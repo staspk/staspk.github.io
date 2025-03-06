@@ -14,6 +14,8 @@ canvas {
  ----   SHARED CLASSES    --------------
 */
 
+body { background-color: #000; }
+
 a {
     text-decoration: none;
 }
@@ -44,6 +46,10 @@ a {
 .btn-danger {
     background-color: #b175dad7;
     border-color: #7b1eb9d7;
+}
+
+.clickable {
+    cursor: pointer;
 }
 
 
