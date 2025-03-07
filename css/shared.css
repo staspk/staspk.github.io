@@ -48,6 +48,10 @@ a {
     border-color: #7b1eb9d7;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
 
 /*
  ----   SCROLLBAR    --------------

@@ -8,7 +8,7 @@
     overflow: visible;
   }
   
-#view-home #ewuLogo {
+#view-home #ewu-logo {
     width: 180px;
     height: 180px;
     left: -20px;
@@ -27,12 +27,12 @@
     animation: colorRotate 3s linear 0s infinite, my-shake 9s linear 0s infinite;
 }
 
-#view-home #firstName-mainPage {
+#view-home #firstname {
     top: -145px;
     left: 179px;
 }
 
-#view-home #lastName-mainPage {
+#view-home #lastname {
     top: -157px;
     left: 146px;
 }
