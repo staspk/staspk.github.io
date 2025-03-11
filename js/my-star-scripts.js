@@ -128,10 +128,7 @@ function jsStarfield()
 		var delta_time = (time - this.last_frame)*0.001;
 		this.update_stars(delta_time);
 		
-		if (this.method === "rects")
-			this.draw_rects();
-		else
-			this.draw_buffer();
+		this.draw_rects();
 			
 		// this.draw_fps(delta_time);
 			

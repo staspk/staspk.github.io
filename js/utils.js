@@ -15,18 +15,6 @@ function setSesVar(sesVar, varVal) {
 
 
 /*
- ----   STARFIELD UTILS    --------------
-*/
-
-function setStarField(speed, starAmount) {
-    if(speed != null)
-        starfield.speed = speed;
-    if(starAmount != null)
-        starfield.set_amount(starAmount);
-}
-
-
-/*
  ----   STRING UTILS    --------------
 */
 
