@@ -31,6 +31,9 @@ function stringContains(stringToSearch, searchedString) {      //return boolean
  ----   ANIMATION UTILS    --------------
 */
 
+/**
+ * My helper function in utils.js.
+ */
 function animateCSS(element, animationName, callback) {
     const node = document.querySelector(element);
     node.classList.add('animated', animationName);

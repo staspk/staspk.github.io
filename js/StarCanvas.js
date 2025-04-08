@@ -1,12 +1,12 @@
+function random_float(min, max) { 
+    return min + Math.random() * (max-min);
+}
+
 class Vector2 {
     constructor(x, y) { this.x = x; this.y = y; }
 }
 class Vector3 {
     constructor(x, y, z) { this.x = x; this.y = y; this.z = z; }
-}
-
-function randomRange(min, max) { 
-    return min + Math.random() * (max-min);
 }
 
 class StarCanvas {
@@ -40,9 +40,9 @@ class StarCanvas {
         for (let i = 0; i < this.starCount; i++) {
             this.stars.push(
             new Vector3(
-                randomRange(-this.canvas.width, this.canvas.width),
-                randomRange(-this.canvas.height, this.canvas.height),
-                randomRange(1, this.maxDepth))
+                random_float(-this.canvas.width, this.canvas.width),
+                random_float(-this.canvas.height, this.canvas.height),
+                random_float(1, this.maxDepth))
             );
         }
     }
@@ -50,10 +50,31 @@ class StarCanvas {
     setStarField(starSpeed, starCount) {
         if(starSpeed)
             this.speed = starSpeed;
+
         if(starCount) {
-            this.stars.length = starCount - 1;
-            // starCount < this.stars.length;
-            this.starCount = starCount;
+            starCount = Math.floor(starCount);
+
+            if (starCount < this.stars.length) {
+                this.starCount = starCount;
+                this.stars.length = starCount;
+            }
+            else {
+                var count = starCount - this.stars.length;
+                
+                for(let i = 0; i < count; i++) {
+                    this.stars.push(
+                    new Vector3(
+                        random_float(-this.canvas.width,this.canvas.width), 
+                        random_float(-this.canvas.height,this.canvas.height), 
+                        random_float(1, this.maxDepth)
+                    ));	
+                }
+            }
+
+		
+            // this.stars.length = starCount - 1;
+            // // starCount < this.stars.length;
+            // this.starCount = starCount;
         }
             
     }
@@ -87,8 +108,8 @@ class StarCanvas {
             let star = this.stars[i];
             star.z -= distance;
             if (star.z <= 0) {
-                star.x = randomRange(-this.canvas.width, this.canvas.width);
-                star.y = randomRange(-this.canvas.height, this.canvas.height);
+                star.x = random_float(-this.canvas.width, this.canvas.width);
+                star.y = random_float(-this.canvas.height, this.canvas.height);
                 star.z = this.maxDepth;
             }
         }
